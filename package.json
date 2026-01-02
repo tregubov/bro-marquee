@@ -1,12 +1,16 @@
 {
   "name": "@bro-design/bro-marquee",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UX-first JavaScript marquee library for Webflow",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/bro-marquee.min.js",
   "jsdelivr": "dist/bro-marquee.min.js",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tregubov/bro-marquee.git"
