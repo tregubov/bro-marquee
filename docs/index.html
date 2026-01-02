@@ -1,0 +1,1379 @@
+<!DOCTYPE html><!--  Last Published: Fri Jan 02 2026 20:08:55 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="693013b1f21b2c53ad0852e2" data-wf-site="693013aef21b2c53ad08522e" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>broMarquee — Free Infinite Marquee Library for Webflow</title>
+  <meta content="9KB logo marquee library with drag, swipe, inertia, and sync. No coding required. Works perfectly with Webflow👌" name="description">
+  <meta content="broMarquee — Free Infinite Marquee Library for Webflow" property="og:title">
+  <meta content="9KB logo marquee library with drag, swipe, inertia, and sync. No coding required. Works perfectly with Webflow👌" property="og:description">
+  <meta content="https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/695816db0e6abcf1492811b2_og-image.jpg" property="og:image">
+  <meta content="broMarquee — Free Infinite Marquee Library for Webflow" property="twitter:title">
+  <meta content="9KB logo marquee library with drag, swipe, inertia, and sync. No coding required. Works perfectly with Webflow👌" property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/components.css" rel="stylesheet" type="text/css">
+  <link href="css/bro-marquee.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inter:100,200,300,regular,500,600,700,800,900"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "broMarquee",
+  "applicationCategory": "JavaScript Library",
+  "operatingSystem": "Web",
+  "description": "Free 9KB marquee library for Webflow with drag, swipe, inertia & sync",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "bro-design.pro"
+  }
+}
+</script>
+  <script src="https://cdn.prod.website-files.com/693013aef21b2c53ad08522e%2F6544eda5f000985a163a8687%2F6942db8b70b428467e6214be%2Ffinsweetcomponentsconfig-1.0.3.js" type="module" async="" siteid="693013aef21b2c53ad08522e" finsweet="components"></script>
+</head>
+<body>
+  <div class="page_wrap">
+    <div class="u-position-fixed">
+      <div class="w-embed">
+        <style>
+::before, ::after {
+	box-sizing: border-box;
+}
+.w-embed:before, .w-embed:after,
+.w-richtext:before, .w-richtext:after {
+	content: unset;
+}
+html {
+	background-color: var(--_theme---background);
+}
+button {
+	background-color: unset;
+	padding: unset;
+	text-align: inherit;
+}
+button:not(:disabled) {
+	cursor: pointer;
+}
+video {
+	width: 100%;
+	object-fit: cover;
+}
+/* remove padding of empty element */
+.wf-empty {
+	padding: 0;
+}
+svg {
+	max-width: 100%;
+}
+@media (prefers-color-scheme: light) {
+	option { color: black; }
+}
+img::selection {
+	background: transparent;
+}
+/* Typography */
+body {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+/* Clear Defaults */
+a:not([class]) {
+	text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6,p,blockquote,label {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	text-wrap: inherit;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+select:has(option[value=""]:checked) {
+	color: color-mix(in lab, currentcolor 60%, transparent)
+}
+/* Selection Color */
+::selection {
+	background-color: var(--_theme---selection--background);
+	color: var(--_theme---selection--text);
+}
+/* Margin Trim */
+:is(.u-margin-trim,.w-richtext,.u-content-wrapper,[class*="u-container"],[class*="u-layout-column"]) > :not(:not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim) ~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim)),
+:is(.u-margin-trim,.w-richtext,.u-content-wrapper,[class*="u-container"],[class*="u-layout-column"]) > :not(:not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim) ~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim)).u-display-contents > :first-child {
+	margin-top: 0;
+}
+:is(.u-margin-trim,.w-richtext,.u-content-wrapper,[class*="u-container"],[class*="u-layout-column"]) > :not(:has(~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim))),
+:is(.u-margin-trim,.w-richtext,.u-content-wrapper,[class*="u-container"],[class*="u-layout-column"]) > :not(:has(~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim))).u-display-contents > :last-child {
+	margin-bottom: 0;
+}
+/* Line Height Trim */
+:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::before,
+[class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::before {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-top));
+}
+:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::after,
+[class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::after {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-bottom));
+}
+/* Rich Text Links */
+.w-richtext a {
+	position: relative;
+	z-index: 4;
+}
+/* Line Clamp */
+[class*="u-line-clamp"]:not(.w-richtext),
+[class*="u-line-clamp"].w-richtext > * {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+[class*="u-line-clamp"].w-richtext > :not(:first-child) { display: none; }
+.u-line-clamp-2:not(.w-richtext), .u-line-clamp-2.w-richtext > * { -webkit-line-clamp: 2; }
+.u-line-clamp-3:not(.w-richtext), .u-line-clamp-3.w-richtext > * { -webkit-line-clamp: 3; }
+.u-line-clamp-4:not(.w-richtext), .u-line-clamp-4.w-richtext > * { -webkit-line-clamp: 4; }
+/* Text Max Width */
+.u-text > * {
+	width: 100%;
+	max-width: inherit !important;
+  margin-inline: 0 !important;
+	margin-top: 0 !important;
+}
+/* Background Slot Children */
+.u-background-slot > * {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset !important;
+}
+/* Hide */
+.u-hide-if-empty:empty,
+.u-hide-if-empty:has(> *):not(:has(> :not(.w-condition-invisible))),
+.u-hide-if-empty-cms:not(:has(.w-dyn-item)),
+[class*="u-layout-column"]:empty {
+	display: none !important;
+}
+/* Focus State */
+a, button, :where([tabindex]), input {
+	outline-offset: var(--focus--offset-outer);
+}
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible {
+	outline-color: #3b79c3;
+	outline-width: var(--focus--width);
+	outline-style: solid;
+}
+/* Disabled */
+[data-button]:has(button:disabled) {
+	opacity: 0.5;
+  pointer-events: none;
+}
+/* Global / Clickable Component */
+.wf-design-mode .clickable_wrap { z-index: 0; }
+.clickable_wrap a[href="#"] { display: none; }
+.clickable_wrap a[href="#"] ~ button { display: block; }
+/* Number Attributes */
+[data-number="-1"]{--number: initial;}[data-number="0"]{--number: 0;}[data-number="1"]{--number:1}[data-number="2"]{--number:2}[data-number="3"]{--number:3}[data-number="4"]{--number:4}[data-number="5"]{--number:5}[data-number="6"]{--number:6}[data-number="7"]{--number:7}[data-number="8"]{--number:8}[data-number="9"]{--number:9}
+[data-number="10"]{--number:10}[data-number="11"]{--number:11}[data-number="12"]{--number:12}[data-number="13"]{--number:13}[data-number="14"]{--number:14}[data-number="15"]{--number:15}[data-number="16"]{--number:16}[data-number="17"]{--number:17}[data-number="18"]{--number:18}[data-number="19"]{--number:19}
+[data-number="20"]{--number:20}[data-number="21"]{--number:21}[data-number="22"]{--number:22}[data-number="23"]{--number:23}[data-number="24"]{--number:24}[data-number="25"]{--number:25}[data-number="26"]{--number:26}[data-number="27"]{--number:27}[data-number="28"]{--number:28}[data-number="29"]{--number:29}
+[data-number="30"]{--number:30}[data-number="31"]{--number:31}[data-number="32"]{--number:32}[data-number="33"]{--number:33}[data-number="34"]{--number:34}[data-number="35"]{--number:35}[data-number="36"]{--number:36}[data-number="37"]{--number:37}[data-number="38"]{--number:38}[data-number="39"]{--number:39}
+[data-number="40"]{--number:40}[data-number="41"]{--number:41}[data-number="42"]{--number:42}[data-number="43"]{--number:43}[data-number="44"]{--number:44}[data-number="45"]{--number:45}[data-number="46"]{--number:46}[data-number="47"]{--number:47}[data-number="48"]{--number:48}[data-number="49"]{--number:49}
+[data-number="50"]{--number:50}[data-number="51"]{--number:51}[data-number="52"]{--number:52}[data-number="53"]{--number:53}[data-number="54"]{--number:54}[data-number="55"]{--number:55}[data-number="56"]{--number:56}[data-number="57"]{--number:57}[data-number="58"]{--number:58}[data-number="59"]{--number:59}
+[data-number="60"]{--number:60}[data-number="61"]{--number:61}[data-number="62"]{--number:62}[data-number="63"]{--number:63}[data-number="64"]{--number:64}[data-number="65"]{--number:65}[data-number="66"]{--number:66}[data-number="67"]{--number:67}[data-number="68"]{--number:68}[data-number="69"]{--number:69}
+[data-number="70"]{--number:70}[data-number="71"]{--number:71}[data-number="72"]{--number:72}[data-number="73"]{--number:73}[data-number="74"]{--number:74}[data-number="75"]{--number:75}[data-number="76"]{--number:76}[data-number="77"]{--number:77}[data-number="78"]{--number:78}[data-number="79"]{--number:79}
+[data-number="80"]{--number:80}[data-number="81"]{--number:81}[data-number="82"]{--number:82}[data-number="83"]{--number:83}[data-number="84"]{--number:84}[data-number="85"]{--number:85}[data-number="86"]{--number:86}[data-number="87"]{--number:87}[data-number="88"]{--number:88}[data-number="89"]{--number:89}
+[data-number="90"]{--number:90}[data-number="91"]{--number:91}[data-number="92"]{--number:92}[data-number="93"]{--number:93}[data-number="94"]{--number:94}[data-number="95"]{--number:95}[data-number="96"]{--number:96}[data-number="97"]{--number:97}[data-number="98"]{--number:98}[data-number="99"]{--number:99}[data-number="100"]{--number:100}
+/* State Manager */
+[data-state] { --_state---true: 1; --_state---false: 0; }
+.is-active,
+[data-state~="checked"]:is(:checked, :has(:checked)),
+[data-state~="current"]:is(.w--current, :has(.w--current)),
+[data-state~="open"]:is(.w--open, :has(.w--open)),
+[data-state~="pressed"]:is([aria-pressed="true"], :has([aria-pressed="true"])),
+[data-state~="expanded"]:is([aria-expanded="true"], :has([aria-expanded="true"])),
+[data-state~="external"]:is([target="_blank"], :has([target="_blank"])) { 
+	--_state---true: 0; --_state---false: 1;
+}
+.wf-design-mode [data-trigger~="preview"],
+[data-trigger~="focus"]:is(:focus-visible, :has(:focus-visible)),
+[data-trigger~="group"]:has([data-trigger~="focus-other"]:focus-visible, [data-trigger~="focus-other"] :focus-visible)
+  [data-trigger~="focus-other"]:not(:focus-visible, :has(:focus-visible)) {
+	--_trigger---on: 0; --_trigger---off: 1;
+}
+@media (hover: hover) {
+	[data-trigger~="hover"]:hover,
+  [data-trigger~="hover-if-clickable"]:has(.clickable_wrap:not(.w-condition-invisible)):hover,
+	[data-trigger~="group"]:has([data-trigger~="hover-other"]:hover) [data-trigger~="hover-other"]:not(:hover) { 
+		--_trigger---on: 0; --_trigger---off: 1;
+	}
+	[data-trigger~="hover-other"]:hover { --_trigger---on: 1 !important; --_trigger---off: 0 !important; }
+}
+@media (hover: none) {
+  [data-trigger~="mobile"] { --_trigger---on: 0; --_trigger---off: 1; }
+}
+/* Slot Styler */
+[data-slot] > .w-dyn-list,
+[data-slot] > .w-dyn-list > *,
+[data-slot] > .w-dyn-list > * > *,
+[data-slot] > .u-display-contents > .w-dyn-list,
+[data-slot] > .u-display-contents > .w-dyn-list > *,
+[data-slot] > .u-display-contents > .w-dyn-list > * > *,
+[data-slot] > .u-display-contents > .u-display-contents > .w-dyn-list,
+[data-slot] > .u-display-contents > .u-display-contents > .w-dyn-list > *,
+[data-slot] > .u-display-contents > .u-display-contents > .w-dyn-list > * > * {
+  display: contents;
+}
+/* Layout Slot */
+.u-layout-column-2:has(> :not(.u-image-wrapper,.u-video,.u-iframe-wapper,.u-overlay)) {
+	aspect-ratio: auto;
+  border-radius: 0;
+  overflow: visible;
+}
+/* Responsive Styles */
+[data-large-columns="1"] { display: flex; }
+[data-large-columns="2"] { display: grid; --_column-count---value: 2; }
+[data-large-columns="3"] { display: grid; --_column-count---value: 3; }
+[data-large-columns="4"] { display: grid; --_column-count---value: 4; }
+[data-large-columns="5"] { display: grid; --_column-count---value: 5; }
+[data-large-columns="6"] { display: grid; --_column-count---value: 6; }
+[data-large-columns="7"] { display: grid; --_column-count---value: 7; }
+[data-large-columns="8"] { display: grid; --_column-count---value: 8; }
+[data-large-columns="9"] { display: grid; --_column-count---value: 9; }
+[data-large-columns="10"] { display: grid; --_column-count---value: 10; }
+[data-large-columns="11"] { display: grid; --_column-count---value: 11; }
+[data-large-columns="12"] { display: grid; --_column-count---value: 12; }
+.slider_offset { --slide-count: var(--lg); --lg: 3; --md: var(--lg); --sm: var(--md); --xs: var(--sm); }
+@container (width < 50em) {
+  * {
+    --_responsive---large: 0;
+    --_responsive---medium: 1;
+    --flex-medium: flex;
+    --none-medium: none;
+    --column-medium: column;
+    --row-medium: row;
+    --start-medium: start;
+    --center-medium: center;
+    --end-medium: end;
+    --relative-medium: relative;
+  }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="1"] { display: flex; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="2"] { display: grid; --_column-count---value: 2; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="3"] { display: grid; --_column-count---value: 3; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="4"] { display: grid; --_column-count---value: 4; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="5"] { display: grid; --_column-count---value: 5; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="6"] { display: grid; --_column-count---value: 6; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="7"] { display: grid; --_column-count---value: 7; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="8"] { display: grid; --_column-count---value: 8; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="9"] { display: grid; --_column-count---value: 9; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="10"] { display: grid; --_column-count---value: 10; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="11"] { display: grid; --_column-count---value: 11; }
+  :not([data-wf--grid--variant*="auto"]) > [data-medium-columns="12"] { display: grid; --_column-count---value: 12; }
+	.u-order-first-medium { order: -1; }
+	.u-order-auto-medium { order: 0; }
+	.u-order-last-medium { order: 1; }
+	.u-display-contents-medium { display: contents; }
+	.u-display-block-medium { display: block; }
+	.u-display-grid-medium { display: grid; }
+	.u-display-flex-medium { display: flex; }
+	.u-display-none-medium { display: none; }
+	.u-all-unset-medium { all: unset; }
+	.slider_offset { --slide-count: var(--md); }
+}
+@container (width < 35em) {
+  * {
+    --_responsive---medium: 0;
+    --_responsive---small: 1;
+    --flex-small: flex;
+    --none-small: none;
+    --column-small: column;
+    --row-small: row;
+    --start-small: start;
+    --center-small: center;
+    --end-small: end;
+		--relative-small: relative;
+  }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="1"] { display: flex; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="2"] { display: grid; --_column-count---value: 2; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="3"] { display: grid; --_column-count---value: 3; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="4"] { display: grid; --_column-count---value: 4; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="5"] { display: grid; --_column-count---value: 5; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="6"] { display: grid; --_column-count---value: 6; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="7"] { display: grid; --_column-count---value: 7; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="8"] { display: grid; --_column-count---value: 8; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="9"] { display: grid; --_column-count---value: 9; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="10"] { display: grid; --_column-count---value: 10; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="11"] { display: grid; --_column-count---value: 11; }
+  :not([data-wf--grid--variant*="auto"]) > [data-small-columns="12"] { display: grid; --_column-count---value: 12; }
+	.u-order-first-small { order: -1; }
+	.u-order-auto-small { order: 0; }
+	.u-order-last-small { order: 1; }
+	.u-display-contents-small { display: contents; }
+	.u-display-block-small { display: block; }
+	.u-display-grid-small { display: grid; }
+	.u-display-flex-small { display: flex; }
+	.u-display-none-small { display: none; }
+	.u-all-unset-small { all: unset; }
+	.slider_offset { --slide-count: var(--sm); }
+}
+@container (width < 20em) {
+  * {
+    --_responsive---small: 0;
+    --_responsive---xsmall: 1;
+    --flex-xsmall: flex;
+    --none-xsmall: none;
+    --column-xsmall: column;
+    --row-xsmall: row;
+    --start-xsmall: start;
+    --center-xsmall: center;
+    --end-xsmall: end;
+		--relative-xsmall: relative;
+  }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="1"] { display: flex; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="2"] { display: grid; --_column-count---value: 2; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="3"] { display: grid; --_column-count---value: 3; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="4"] { display: grid; --_column-count---value: 4; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="5"] { display: grid; --_column-count---value: 5; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="6"] { display: grid; --_column-count---value: 6; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="7"] { display: grid; --_column-count---value: 7; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="8"] { display: grid; --_column-count---value: 8; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="9"] { display: grid; --_column-count---value: 9; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="10"] { display: grid; --_column-count---value: 10; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="11"] { display: grid; --_column-count---value: 11; }
+  :not([data-wf--grid--variant*="auto"]) > [data-xsmall-columns="12"] { display: grid; --_column-count---value: 12; }
+	.u-order-first-xsmall { order: -1; }
+	.u-order-auto-xsmall { order: 0; }
+	.u-order-last-xsmall { order: 1; }
+	.u-display-contents-xsmall { display: contents; }
+	.u-display-block-xsmall { display: block; }
+	.u-display-grid-xsmall { display: grid; }
+	.u-display-flex-xsmall { display: flex; }
+	.u-display-none-xsmall { display: none; }
+	.u-all-unset-xsmall { all: unset; }
+	.slider_offset { --slide-count: var(--xs); }
+}
+</style>
+      </div>
+      <div class="u-embed-css w-embed">
+        <style>
+h1 strong { color: var(--swatch--brand-500); font-weight: 600; }
+@media screen and (max-width: 767px) {
+  .button_main_wrap .button_main_element {
+    background: var(--swatch--dark-600);
+    border-color: var(--swatch--dark-600);
+  }
+}
+.toggle_button[aria-checked="true"] { color: var(--swatch--light-50)!important; }
+.switch_button[aria-checked="true"] { background: var(--swatch--brand-500); }
+.switch_button[aria-checked="true"] .switch_thumb { transform: translateX(1rem); }
+.compare_table_body .compare_table_row:nth-child(even) {
+	background-color: #EDEDEA;
+}
+.compare_table_row .compare_table_cell:first-child {
+	background-color: color(srgb 0.85 0.85 0.85 / 0.25);
+	border-bottom: 1px solid var(--swatch--light-50);
+}
+.compare_table_row .compare_table_cell:last-child,
+.compare_table_row .compare_table_header:last-child {
+	box-shadow: none;
+}
+</style>
+      </div>
+    </div>
+    <div data-wf--nav--nav-position="overlap" class="nav_component w-variant-dd866659-1d7d-6447-6461-66ca86ca367f">
+      <div class="u-embed-css w-embed">
+        <style>
+:root {
+	--nav--menu-open-duration: 400ms;
+	--nav--menu-close-duration: 400ms;
+	--nav--dropdown-open-duration: 400ms;
+	--nav--dropdown-close-duration: 400ms;
+}
+body:has(.nav_component .w-nav-button.w--open):not(:has(.nav_desktop_wrap:not(.w-condition-invisible))) { overflow: hidden; }
+/* on smaller screens */
+@media (width < 65em) {
+	/* disable scroll when mobile menu is open */
+	body:has(.nav_component .w-nav-button.w--open) { overflow: hidden; }
+}
+/* on larger screens */
+@container (min-width: 65em) {
+	/* show desktop nav & dropdown backdrop */
+	.nav_desktop_wrap, .nav_dropdown_backdrop { display: block; }
+	/* hide mobile nav & mobile menu backdrop */
+	.nav_desktop_wrap:not(.w-condition-invisible) ~ .nav_mobile_wrap, .nav_desktop_wrap:not(.w-condition-invisible) ~ .nav_menu_backdrop { display: none; }
+}
+/* dropdown list: initial state */
+html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list {
+	/* removes display none to enable css transitions */
+	display: grid !important;
+	grid-template-columns: minmax(0, 1fr);
+	/* sets list to 0 height by default */
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--nav--dropdown-close-duration);
+	/* makes list content not focusable when closed */
+	visibility: hidden;
+	opacity: 0;
+}
+/* makes list content focusable when opened */
+html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list.w--open {
+	visibility: visible;
+	opacity: 1;
+}
+/* sets list child to overflow hidden to enable css height transition */
+.nav_dropdown_component > .w-dropdown-list > * {
+	overflow: hidden;
+}
+/* set open state of dropdown list */
+.nav_dropdown_component:has(> .w-dropdown-toggle[aria-expanded="true"]) > .w-dropdown-list {
+	--nav--dropdown-close-duration: var(--nav--dropdown-open-duration);
+	grid-template-rows: 1fr;
+}
+/* on desktop, delay dropdown opening if another dropdown is open */
+.nav_desktop_wrap:has(.nav_dropdown_component > .w-dropdown-toggle.w--open[aria-expanded="false"]) .nav_dropdown_component:has(> .w--open[aria-expanded="true"]) > .w-dropdown-list {
+	transition-delay: var(--nav--dropdown-close-duration);
+}
+/* reveal dropdown backdrop when dropdown open */
+.nav_dropdown_backdrop {
+	transition: opacity var(--nav--dropdown-close-duration);
+}
+body:has(.nav_dropdown_component > [aria-expanded="true"]) .nav_dropdown_backdrop {
+	opacity: 1;
+}
+/* reveal mobile menu backdrop on menu open */
+.nav_menu_backdrop {
+	transition: opacity var(--nav--menu-close-duration);
+}
+.nav_component:has(.w-nav-button.w--open) .nav_menu_backdrop {
+	opacity: 1;
+}
+/* menu animations */
+@keyframes menuOpen {
+ from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@keyframes menuClose {
+ from { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+}
+/* menu open */
+.nav_component:has(.w-nav-button.w--open) .w-nav-menu {
+	animation: menuOpen var(--nav--menu-open-duration) ease-in-out forwards;
+}
+/* menu close */
+.nav_component:has(.w-nav-button:not(.w--open)) .w-nav-menu {
+	animation: menuClose var(--nav--menu-close-duration) ease-in-out forwards;
+}
+/* position overflow to top of screen */
+.nav_component .w-nav-overlay {
+ top: 0;
+ min-height: 100vh;
+}
+/* open dropdown on mobile */
+.nav_mobile_wrap [data-open-on-mobile] > .w-dropdown-toggle {
+	display: none;
+}
+.nav_mobile_wrap [data-open-on-mobile] > .w-dropdown-list {
+	visibility: visible !important;
+	opacity: 1 !important;
+	display: block !important;
+	grid-template-rows: 1fr !important;
+}
+/* nav banner */
+html:has(.nav_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
+	--nav--height-total: calc(var(--nav--banner-height) + var(--nav--height) + var(--nav--spacing-outer-vertical));
+}
+.hide-nav-banner .nav_banner_wrap {
+	display: none;
+}
+.wf-design-mode .nav_mobile_menu_wrap {
+	width: 100%;
+}
+</style>
+      </div>
+      <a href="#main" class="nav_skip_wrap w-inline-block">
+        <div class="nav_skip_text u-text-style-small">Skip to main content</div>
+      </a>
+      <header class="nav_desktop_wrap">
+        <div class="nav_desktop_contain">
+          <div class="nav_desktop_layout">
+            <a aria-label="Home Page" href="#hi" class="nav_desktop_logo w-inline-block">
+              <div class="brand_logo_wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 61 33" fill="none" class="brand_logo_letters">
+                  <path d="M26.7595 32.3731V1.93655H32.444L32.8021 32.3731H26.7595ZM54.1972 32.3731L54.5105 1.93655H60.195V32.3731H54.1972ZM45.6481 32.3731H41.3064L34.7267 15.6778L30.2955 1.93655H34.7715L42.4702 21.5861L43.9472 26.5991H43.2311L44.7529 21.5861L52.4068 1.93655H56.6142L52.183 15.7673L45.6481 32.3731Z" fill="var(--swatch--brand-500)"></path>
+                  <path d="M12.0404 7.56439C14.1292 7.56439 15.9196 8.07167 17.4115 9.08622C18.9334 10.1008 20.0971 11.548 20.9028 13.4279C21.7085 15.3078 22.1113 17.5607 22.1113 20.1866C22.1113 24.2747 21.1863 27.4228 19.3362 29.6309C17.516 31.8092 15.084 32.8984 12.0404 32.8984C9.3548 32.8984 7.23615 31.8092 5.68448 29.6309C4.13281 27.4526 3.35699 24.3045 3.35699 20.1866C3.35699 17.5906 3.71506 15.3526 4.43121 13.4727C5.14737 11.5629 6.14701 10.1008 7.43012 9.08622C8.74308 8.07167 10.2798 7.56439 12.0404 7.56439ZM11.0109 12.3089C9.28018 12.3089 7.96724 12.9803 7.07205 14.3231C6.17686 15.6659 5.72926 17.6204 5.72926 20.1866C5.72926 22.7528 6.17686 24.7223 7.07205 26.0949C7.99708 27.4675 9.31002 28.1538 11.0109 28.1538C12.7118 28.1538 14.0098 27.4675 14.905 26.0949C15.8002 24.7223 16.2478 22.7528 16.2478 20.1866C16.2478 17.6502 15.7853 15.7107 14.8602 14.3679C13.965 12.9952 12.6819 12.3089 11.0109 12.3089ZM5.72926 32.227H0V0H5.72926V32.227Z" fill="#171717"></path>
+                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 27" fill="none" class="brand_logo_arrows">
+                  <path d="M7.37028 14.7438L9.82874 12.2853L6.65273 9.10931L15.9879 9.10931L15.9879 5.63447L6.65099 5.63447L9.82874 2.45846L7.37202 6.71655e-07L0.000129512 7.37189L7.37028 14.7438Z" fill="var(--swatch--brand-500)"></path>
+                  <path d="M16.6114 11.731L14.1529 14.1894L17.3289 17.3655L7.99376 17.3655L7.99376 20.8403L17.3307 20.8403L14.1529 24.0163L16.6097 26.4748L23.9815 19.1029L16.6114 11.731Z" fill="var(--swatch--brand-500)"></path>
+                </svg>
+                <div class="brand_logo_text">v1.0.1</div>
+              </div>
+            </a>
+            <nav aria-label="Main" data-wf--menu--variant="desktop" class="nav_links_component w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">
+              <ul role="list" class="nav_links_wrap w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-list-unstyled">
+                <li class="nav_links_item">
+                  <a href="#why" class="nav_links_link w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-inline-block">
+                    <div class="nav_links_text w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">Why broMarquee</div>
+                  </a>
+                </li>
+                <li class="nav_links_item">
+                  <a href="#how-to-use" class="nav_links_link w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-inline-block">
+                    <div class="nav_links_text w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">Get it now</div>
+                  </a>
+                </li>
+                <li class="nav_links_item">
+                  <a href="#contributing" class="nav_links_link w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-inline-block">
+                    <div class="nav_links_text w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">Contributing</div>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div data-animation="default" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav_mobile_wrap w-nav">
+        <div class="nav_mobile_contain">
+          <div class="nav_mobile_layout">
+            <a aria-label="Home Page" href="#hi" class="nav_mobile_logo w-inline-block">
+              <div class="brand_logo_wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 61 33" fill="none" class="brand_logo_letters">
+                  <path d="M26.7595 32.3731V1.93655H32.444L32.8021 32.3731H26.7595ZM54.1972 32.3731L54.5105 1.93655H60.195V32.3731H54.1972ZM45.6481 32.3731H41.3064L34.7267 15.6778L30.2955 1.93655H34.7715L42.4702 21.5861L43.9472 26.5991H43.2311L44.7529 21.5861L52.4068 1.93655H56.6142L52.183 15.7673L45.6481 32.3731Z" fill="var(--swatch--brand-500)"></path>
+                  <path d="M12.0404 7.56439C14.1292 7.56439 15.9196 8.07167 17.4115 9.08622C18.9334 10.1008 20.0971 11.548 20.9028 13.4279C21.7085 15.3078 22.1113 17.5607 22.1113 20.1866C22.1113 24.2747 21.1863 27.4228 19.3362 29.6309C17.516 31.8092 15.084 32.8984 12.0404 32.8984C9.3548 32.8984 7.23615 31.8092 5.68448 29.6309C4.13281 27.4526 3.35699 24.3045 3.35699 20.1866C3.35699 17.5906 3.71506 15.3526 4.43121 13.4727C5.14737 11.5629 6.14701 10.1008 7.43012 9.08622C8.74308 8.07167 10.2798 7.56439 12.0404 7.56439ZM11.0109 12.3089C9.28018 12.3089 7.96724 12.9803 7.07205 14.3231C6.17686 15.6659 5.72926 17.6204 5.72926 20.1866C5.72926 22.7528 6.17686 24.7223 7.07205 26.0949C7.99708 27.4675 9.31002 28.1538 11.0109 28.1538C12.7118 28.1538 14.0098 27.4675 14.905 26.0949C15.8002 24.7223 16.2478 22.7528 16.2478 20.1866C16.2478 17.6502 15.7853 15.7107 14.8602 14.3679C13.965 12.9952 12.6819 12.3089 11.0109 12.3089ZM5.72926 32.227H0V0H5.72926V32.227Z" fill="#171717"></path>
+                </svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 27" fill="none" class="brand_logo_arrows">
+                  <path d="M7.37028 14.7438L9.82874 12.2853L6.65273 9.10931L15.9879 9.10931L15.9879 5.63447L6.65099 5.63447L9.82874 2.45846L7.37202 6.71655e-07L0.000129512 7.37189L7.37028 14.7438Z" fill="var(--swatch--brand-500)"></path>
+                  <path d="M16.6114 11.731L14.1529 14.1894L17.3289 17.3655L7.99376 17.3655L7.99376 20.8403L17.3307 20.8403L14.1529 24.0163L16.6097 26.4748L23.9815 19.1029L16.6114 11.731Z" fill="var(--swatch--brand-500)"></path>
+                </svg>
+                <div class="brand_logo_text">v1.0.1</div>
+              </div>
+            </a>
+            <nav role="navigation" class="nav_mobile_menu_wrap w-nav-menu">
+              <div data-lenis-prevent="" class="nav_mobile_menu_scroll w-variant-dd866659-1d7d-6447-6461-66ca86ca367f">
+                <nav aria-label="Main" data-wf--menu--variant="mobile" class="nav_links_component">
+                  <ul role="list" class="nav_links_wrap w-list-unstyled">
+                    <li class="nav_links_item">
+                      <a href="#why" class="nav_links_link w-inline-block">
+                        <div class="nav_links_text">Why broMarquee</div>
+                      </a>
+                    </li>
+                    <li class="nav_links_item">
+                      <a href="#how-to-use" class="nav_links_link w-inline-block">
+                        <div class="nav_links_text">Get it now</div>
+                      </a>
+                    </li>
+                    <li class="nav_links_item">
+                      <a href="#contributing" class="nav_links_link w-inline-block">
+                        <div class="nav_links_text">Contributing</div>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </nav>
+            <div data-state="open" class="nav_button_wrap w-nav-button">
+              <div class="nav_button_layout">
+                <div class="nav_button_line is-1"></div>
+                <div class="nav_button_line is-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav_dropdown_backdrop"></div>
+      <div class="nav_menu_backdrop"></div>
+      <div class="u-embed-js w-embed w-script">
+        <script>
+if (sessionStorage.getItem("hide-nav-banner") === "true") {
+  document.documentElement.classList.add("hide-nav-banner");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".nav_banner_close_wrap").forEach((button) => {
+    button.addEventListener("click", function () {
+      sessionStorage.setItem("hide-nav-banner", "true");
+      document.documentElement.classList.add("hide-nav-banner");
+    });
+  });
+  document.querySelectorAll(".nav_skip_wrap").forEach(function (link) {
+    const target = document.querySelector("main");
+    if (!target) return;
+    link.addEventListener("click", function () {
+      target.setAttribute("tabindex", "-1");
+      target.focus();
+    });
+  });
+});
+</script>
+      </div>
+    </div>
+    <main class="page_main">
+      <section id="hi" class="u-section">
+        <div data-wf--spacer--variant="page-top" class="u-section-spacer w-variant-e359d2da-de19-6775-b122-3e06f925f39e u-ignore-trim"></div>
+        <div class="u-container">
+          <div data-wf--content-wrapper--variant="left" class="u-display-contents">
+            <div class="u-content-wrapper  ">
+              <div data-number="48" data-wf--typography-heading--variant="h1" class="u-text w-variant-792802b6-ccdb-f982-5023-5fa970cf03d0 w-richtext u-alignment-center">
+                <h1>bro<strong>Marquee:<br>‍</strong>Drag, Scroll, Swipe</h1>
+              </div>
+              <div data-number="60" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext u-alignment-center">
+                <p>A free, UX-first JavaScript marquee library for Webflow</p>
+              </div>
+            </div>
+          </div>
+          <div aria-label="broMarquee playground" class="playground_component">
+            <div class="u-embed-css w-embed">
+              <style>
+/* Playground settings UI */
+.toggle_button[aria-checked="true"] { color: var(--swatch--light-50)!important; }
+.switch_button[aria-checked="true"] { background: var(--swatch--brand-500); }
+.switch_button[aria-checked="true"] .switch_thumb { transform: translateX(1rem); }
+/* Background glow */
+.bro_marquee_list .bro_marquee_visual {filter: invert(100%);}.playground_background::before,.playground_background::after{content:"";display:block;position:absolute;width:150%;height:150%;border-radius:50%;top:-25%;filter:blur(60px);animation:14s ease-in-out infinite;will-change:transform}.playground_background::before{left:-75%;background:radial-gradient(circle,rgba(168,85,247,.8) 0%,rgba(168,85,247,.4) 30%,rgba(168,85,247,.1) 60%,transparent);animation-name:glow_shift_left}.playground_background::after{right:-75%;background:radial-gradient(circle,rgba(56,189,248,.8) 0%,rgba(56,189,248,.4) 30%,rgba(56,189,248,.1) 60%,transparent);animation-name:glow_shift_right}@media(max-width:768px){.playground_background::before,.playground_background::after{width:200%;height:200%;top:-50%;filter:blur(40px)}.playground_background::before{left:-100%;background:radial-gradient(circle,rgba(168,85,247,1) 0%,rgba(168,85,247,.7) 25%,rgba(168,85,247,.3) 50%,transparent)}.playground_background::after{right:-100%;background:radial-gradient(circle,rgba(56,189,248,1) 0%,rgba(56,189,248,.7) 25%,rgba(56,189,248,.3) 50%,transparent)}}@keyframes glow_shift_left{0%,100%{transform:translate(0,0) scale(1);opacity:1}15%{transform:translate(3%,-4%) scale(1.03);opacity:.95}35%{transform:translate(-4%,3%) scale(.97);opacity:.85}50%{transform:translate(1%,5%) scale(1);opacity:.9}65%{transform:translate(-3%,-2%) scale(1.02);opacity:.95}85%{transform:translate(4%,1%) scale(.99);opacity:.9}}@keyframes glow_shift_right{0%,100%{transform:translate(0,0) scale(1);opacity:1}20%{transform:translate(-3%,4%) scale(1.04);opacity:.9}40%{transform:translate(4%,-3%) scale(.96);opacity:.85}50%{transform:translate(-1%,2%) scale(1.01);opacity:.95}70%{transform:translate(3%,-5%) scale(.98);opacity:.9}90%{transform:translate(-4%,1%) scale(1.03);opacity:.95}}
+</style>
+            </div>
+            <aside aria-label="Settings" class="playground_settings_wrap">
+              <fieldset class="playground_settings_group">
+                <legend class="playground_settings_label u-text-style-main">Direction</legend>
+                <p class="playground_settings_description u-text-style-small u-margin-bottom-3">Change the marquee flow direction.</p>
+                <div aria-label="Direction" role="radiogroup" class="toggle_group">
+                  <div aria-hidden="true" class="toggle_indicator"></div><button role="radio" aria-checked="true" class="toggle_button">Left</button><button role="radio" aria-checked="false" class="toggle_button">Right</button>
+                </div>
+              </fieldset>
+              <fieldset class="playground_settings_group">
+                <legend class="playground_settings_label u-text-style-main">Speed</legend>
+                <p class="playground_settings_description u-text-style-small u-margin-bottom-3">Preset speeds for different UX scenarios.</p>
+                <div aria-label="Speed" role="radiogroup" class="toggle_group">
+                  <div aria-hidden="true" class="toggle_indicator"></div><button role="radio" aria-checked="true" class="toggle_button">Default</button><button role="radio" aria-checked="false" class="toggle_button">Fast</button>
+                </div>
+              </fieldset>
+              <div class="playground_settings_group is-switch">
+                <div class="playground_settings_left"><span id="pause-label" class="playground_settings_label u-text-style-main">Pause on hover</span>
+                  <p class="playground_settings_description u-text-style-small">Smoothly slows down and stops the marquee on hover.</p>
+                </div>
+                <div class="playground_settings_right"><button role="switch" aria-checked="false" aria-labelledby="pause-label" class="switch_button"><span class="switch_thumb"></span></button></div>
+              </div>
+              <div class="playground_settings_group is-switch">
+                <div class="playground_settings_left"><span id="mask-label" class="playground_settings_label u-text-style-main">Mask (edge fade)</span>
+                  <p class="playground_settings_description u-text-style-small">Adds a soft fade on the edges  to improve readability.</p>
+                </div>
+                <div class="playground_settings_right"><button role="switch" aria-checked="false" aria-labelledby="mask-label" class="switch_button"><span class="switch_thumb"></span></button></div>
+              </div>
+              <div class="playground_settings_group is-switch">
+                <div class="playground_settings_left"><span id="multiple-label" class="playground_settings_label u-text-style-main">Multiple marquees</span>
+                  <p class="playground_settings_description u-text-style-small">Add a second marquee instance to test syncing and multi-row layouts.</p>
+                </div>
+                <div class="playground_settings_right"><button role="switch" aria-checked="false" aria-labelledby="multiple-label" class="switch_button"><span class="switch_thumb"></span></button></div>
+              </div>
+            </aside>
+            <div aria-live="polite" role="region" aria-label="Preview marquee" class="playground_preview">
+              <div class="playground_content">
+                <div bro-marquee-speed="0.8" bro-marquee-element="marquee" bro-marquee-mask="false" bro-marquee-direction="left" bro-marquee-pause-on-hover="false" bro-marquee-sync-group="main" bro-marquee-clones="3" class="playground_marquee is-1">
+                  <div bro-marquee-element="wrapper" class="bro_marquee_wrap">
+                    <div bro-marquee-element="list" class="bro_marquee_list">
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-1.svg" loading="lazy" width="101" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-2.svg" loading="lazy" width="109" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-3.svg" loading="lazy" width="81" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-4.svg" loading="lazy" width="135" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-5.svg" loading="lazy" width="139" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-6.svg" loading="lazy" width="95" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-7.svg" loading="lazy" width="97" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-8.svg" loading="lazy" width="93" height="48" alt="" rel="preload" class="bro_marquee_visual"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div bro-marquee-speed="0.4" bro-marquee-element="marquee" bro-marquee-direction="right" bro-marquee-pause-on-hover="false" bro-marquee-clones="4" bro-marquee-sync-group="main" bro-marquee-mask="false" class="playground_marquee is-2 is-hide">
+                  <div bro-marquee-element="wrapper" class="bro_marquee_wrap">
+                    <div bro-marquee-element="list" class="bro_marquee_list">
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-15.svg" loading="lazy" width="139" height="48" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-16.svg" loading="lazy" width="127" height="48" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-17.svg" loading="lazy" width="131" height="48" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-18.svg" loading="lazy" width="134" height="48" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div bro-marquee-speed="0.4" bro-marquee-element="marquee" bro-marquee-mask="false" bro-marquee-direction="left" bro-marquee-pause-on-hover="false" bro-marquee-sync-group="main" bro-marquee-clones="3" class="playground_marquee is-3 is-hide">
+                  <div bro-marquee-element="wrapper" class="bro_marquee_wrap">
+                    <div bro-marquee-element="list" class="bro_marquee_list">
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-9.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-10.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-11.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-12.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-13.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                      <div class="bro_marquee_item">
+                        <div class="bro_marquee_content"><img src="images/logo-14.svg" loading="eager" alt="" class="bro_marquee_visual"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="playground_background"></div>
+            </div>
+            <div class="u-embed-js w-embed w-script"><!--  Playground settings UI  -->
+              <script>
+	document.querySelectorAll('.switch_button').forEach(b=>b.addEventListener('click',()=>{const c=b.getAttribute('aria-checked')==='true';b.setAttribute('aria-checked',!c)}));document.querySelectorAll('.toggle_group').forEach(g=>{const b=g.querySelectorAll('.toggle_button'),i=g.querySelector('.toggle_indicator');b.forEach((btn,idx)=>btn.addEventListener('click',()=>{b.forEach(x=>x.setAttribute('aria-checked','false'));btn.setAttribute('aria-checked','true');i.style.transform=`translateX(${idx*100}%)`}))});
+</script>
+              <!--  Playground marquee  -->
+              <script defer="">
+!function(){'use strict';const D={speed:.4,dir:'left',clones:1,friction:.95,hoverFriction:.88,minVel:.1,wheelDebounce:150,imgTimeout:1e4,frame:16.67},BP={m:767,t:991},SEL='bro-marquee-',syncGroups=new Map();if(!document.querySelector('[data-bro-mq]')){const s=document.createElement('style');s.setAttribute('data-bro-mq','');s.textContent=`[${SEL}element="marquee"][${SEL}mask="true"]{--m:5rem;-webkit-mask-image:linear-gradient(to right,transparent,#000 var(--m),#000 calc(100% - var(--m)),transparent);mask-image:linear-gradient(to right,transparent,#000 var(--m),#000 calc(100% - var(--m)),transparent)}@media(max-width:991px){[${SEL}element="marquee"][${SEL}mask="true"][${SEL}mask-tablet="false"]{-webkit-mask-image:none;mask-image:none}}@media(max-width:767px){[${SEL}element="marquee"][${SEL}mask="true"]{--m:2.5rem}[${SEL}element="marquee"][${SEL}mask="true"][${SEL}mask-mobile="false"]{-webkit-mask-image:none;mask-image:none}}`;document.head.insertBefore(s,document.head.firstChild)}class InfiniteMarquee{constructor(el){const $=s=>el.querySelector(`[${SEL}element="${s}"]`);this.el=el;this.w=$('wrapper');this.l=$('list');if(!this.w||!this.l)return;this.c=this.#parse();this.o=0;this.v=0;this.cw=0;this.ts=null;this.lx=0;this.sx=0;this.sy=0;this.dt=0;this.dd=0;this.td=null;this.aid=null;this.wt=null;this.f={vis:1,drag:0,hover:0,hstop:0,inert:0,wheel:0};this.#bind();this.#init()}#parse(){const g=(n,fb)=>this.el.getAttribute(SEL+n)??fb,n=(k,fb)=>parseFloat(g(k,fb))||fb,h=k=>this.el.hasAttribute(SEL+k);return{spd:n('speed',D.speed),spdT:h('speed-tablet')?n('speed-tablet',null):null,spdM:h('speed-mobile')?n('speed-mobile',null):null,dir:g('direction',D.dir),clones:parseInt(g('clones',D.clones))||D.clones,sync:g('sync-group',null),hover:g('pause-on-hover',null)==='true'}}#bind(){this.onMove=this.onMove.bind(this);this.onUp=this.onUp.bind(this);this.onRsz=this.onRsz.bind(this);this.onTouchMove=this.onTouchMove.bind(this);this.onTouchEnd=this.onTouchEnd.bind(this)}async#init(){const items=[...this.l.children],frag=document.createDocumentFragment();for(let i=0;i<this.c.clones;i++)items.forEach(x=>{const c=x.cloneNode(true);c.setAttribute('aria-hidden','true');frag.appendChild(c)});this.l.appendChild(frag);Object.assign(this.w.style,{willChange:'transform',transform:'translate3d(0,0,0)',cursor:'grab'});const imgs=this.l.querySelectorAll('img');if(imgs.length){imgs.forEach(i=>{if(i.loading!=='eager')i.loading='eager'});await Promise.all([...imgs].map(i=>(i.hasAttribute('width')&&i.hasAttribute('height'))||(i.complete&&i.naturalWidth)?0:new Promise(r=>{i.onload=i.onerror=r;setTimeout(r,D.imgTimeout)})))}this.l.offsetHeight;this.cw=Math.round(this.l.scrollWidth/(this.c.clones+1));if(this.c.dir==='right'){this.o=-this.cw;this.#tr()}new IntersectionObserver(([e])=>{this.f.vis=e.isIntersecting?1:0;this.f.vis?this.#can()&&this.#go():this.#stop()},{threshold:0}).observe(this.el);this.w.addEventListener('mousedown',e=>this.#ds(e,e.clientX,true));this.w.addEventListener('touchstart',e=>{this.#ds(e,e.touches[0].clientX,false);this.sy=e.touches[0].clientY;this.td=null},{passive:true});this.w.addEventListener('wheel',this.#wh.bind(this),{passive:false});if(this.c.hover){this.el.addEventListener('mouseenter',this.#hs.bind(this));this.el.addEventListener('mouseleave',this.#he.bind(this))}window.addEventListener('resize',this.onRsz);if(this.c.sync){if(!syncGroups.has(this.c.sync))syncGroups.set(this.c.sync,[]);syncGroups.get(this.c.sync).push(this)}this.el.__marqueeInstance=this;this.start()}#spd(){const w=innerWidth;return(w<=BP.m&&this.c.spdM!==null)?this.c.spdM:(w<=BP.t&&this.c.spdT!==null)?this.c.spdT:this.c.spd}#norm(){const w=this.cw,L=this.c.dir==='left';if(L){while(this.o<=-w)this.o+=w;while(this.o>0)this.o-=w}else{while(this.o>=0)this.o-=w;while(this.o<-w*2)this.o+=w}}#tr(){this.w.style.transform=`translate3d(${Math.round(this.o*100)/100}px,0,0)`}#can(){const f=this.f;return f.vis&&!f.hover&&!f.drag&&!f.inert&&!f.wheel&&!f.hstop&&!this.aid}#go(){this.ts=null;this.aid=requestAnimationFrame(t=>this.#anim(t))}#stop(){if(this.aid){cancelAnimationFrame(this.aid);this.aid=null;this.ts=null}}#anim(t){const f=this.f;if(!f.vis||f.hover||f.drag||f.inert||f.wheel||f.hstop)return;if(!this.ts){this.ts=t;this.aid=requestAnimationFrame(x=>this.#anim(x));return}const m=(t-this.ts)/D.frame;this.ts=t;this.o+=(this.c.dir==='left'?-1:1)*this.#spd()*m;this.#norm();this.#tr();this.aid=requestAnimationFrame(x=>this.#anim(x))}#ds(e,x,prevent){if(prevent)e.preventDefault?.();Object.assign(this.f,{drag:1,inert:0,hstop:0});this.sx=this.lx=x;this.dt=Date.now();this.dd=0;this.v=0;this.#stop();this.w.style.cursor='grabbing';document.addEventListener('mousemove',this.onMove);document.addEventListener('mouseup',this.onUp);document.addEventListener('touchmove',this.onTouchMove,{passive:false});document.addEventListener('touchend',this.onTouchEnd);this.#sync('ds')}onMove(e){if(!this.f.drag)return;e.preventDefault();this.#pd(e.clientX)}onUp(e){if(!this.f.drag)return;this.f.drag=0;this.w.style.cursor='grab';document.removeEventListener('mousemove',this.onMove);document.removeEventListener('mouseup',this.onUp);document.removeEventListener('touchmove',this.onTouchMove);document.removeEventListener('touchend',this.onTouchEnd);this.#df(e.clientX-this.sx)}onTouchMove(e){if(!this.f.drag)return;const t=e.touches[0],dx=t.clientX-this.lx,dy=t.clientY-this.sy;if(!this.td&&(Math.abs(dx)>10||Math.abs(dy)>10))this.td=Math.abs(dx)>Math.abs(dy)?'h':'v';if(this.td==='h'){e.preventDefault();this.#pd(t.clientX)}else if(this.td==='v'){this.f.drag=0;document.removeEventListener('touchmove',this.onTouchMove);document.removeEventListener('touchend',this.onTouchEnd);this.#sync('de');this.#can()&&this.#go()}}onTouchEnd(e){if(!this.f.drag)return;this.f.drag=0;document.removeEventListener('touchmove',this.onTouchMove);document.removeEventListener('touchend',this.onTouchEnd);if(this.td==='h'){this.#df(e.changedTouches[0].clientX-this.sx)}else{this.#sync('de');this.#can()&&this.#go()}}#pd(x){const d=x-this.lx;this.dd+=Math.abs(d);this.o+=d;this.lx=x;this.#norm();this.#tr();this.#sync('ud',d)}#df(td){const t=Date.now()-this.dt;t&&this.dd/t>.5?(this.v=td/t*16,this.#inert()):this.#can()&&this.#go();this.#sync('de')}#wh(e){if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;e.preventDefault();const d=-e.deltaX;this.o+=d;this.#norm();this.#tr();this.f.wheel=1;this.#stop();this.#sync('uw',d);clearTimeout(this.wt);this.wt=setTimeout(()=>{this.f.wheel=0;this.#sync('ew');this.#can()&&this.#go()},D.wheelDebounce)}#hs(){this.f.hover=1;if(this.aid&&!this.f.hstop)this.#hstop(this.c.dir==='left'?-this.#spd():this.#spd());this.#sync('p')}#he(){this.f.hover=this.f.hstop=0;this.#can()&&this.#go();this.#sync('r')}#decay(fr,mv,cb,cond=()=>1){let lt=null;const step=t=>{if(!cond()){this.v=0;this.f.hstop=0;cb?.();return}if(!lt){lt=t;requestAnimationFrame(step);return}const m=(t-lt)/D.frame;lt=t;if(Math.abs(this.v)<mv){this.v=0;this.f.hstop=0;cb?.();return}this.o+=this.v*m;this.v*=Math.pow(fr,m);this.#norm();this.#tr();requestAnimationFrame(step)};requestAnimationFrame(step)}#hstop(v){this.f.hstop=1;this.v=v;this.#stop();this.#decay(D.hoverFriction,.05,()=>{!this.f.hover&&this.#can()&&this.#go()},()=>this.f.hover)}#inert(){this.f.inert=1;this.#sync('si',this.v);this.#decay(D.friction,D.minVel,()=>{this.f.inert=0;this.#sync('ei');this.#can()&&this.#go()})}#inertSync(){this.#decay(D.friction,D.minVel,()=>{this.f.inert=0;this.#can()&&this.#go()})}onRsz(){const ow=this.cw;this.l.offsetHeight;this.cw=Math.round(this.l.scrollWidth/(this.c.clones+1));if(ow&&ow!==this.cw){this.o*=this.cw/ow;this.#norm();this.#tr()}}#sync(a,...args){const g=syncGroups.get(this.c.sync);if(!g)return;const flip=i=>i.c.dir!==this.c.dir;g.forEach(i=>{if(i===this)return;const fl=flip(i);switch(a){case'ds':Object.assign(i.f,{drag:1,inert:0,hstop:0});i.v=0;i.#stop();break;case'ud':case'uw':const d=args[0]*(fl?-1:1);i.o+=d;i.#norm();i.#tr();if(a==='uw'){i.f.wheel=1;i.#stop();clearTimeout(i.wt);i.wt=setTimeout(()=>{i.f.wheel=0;i.#can()&&i.#go()},D.wheelDebounce)}break;case'de':i.f.drag=0;i.#can()&&i.#go();break;case'si':i.f.inert=1;i.v=args[0]*(fl?-1:1);i.#inertSync();break;case'ei':i.f.inert=0;i.v=0;i.#can()&&i.#go();break;case'p':if(i.c.hover){i.f.hover=1;if(i.aid&&!i.f.hstop)i.#hstop(i.c.dir==='left'?-i.#spd():i.#spd())}break;case'r':if(i.c.hover){i.f.hover=i.f.hstop=0;i.#can()&&i.#go()}break}})}start(){(this.#can()||(this.f.vis&&!this.f.hover&&!this.f.hstop&&!this.aid))&&this.#go()}stop(){this.#stop()}forceStart(){this.f.drag=0;this.f.inert=0;this.f.wheel=0;this.f.hstop=0;this.v=0;if(this.f.vis&&!this.aid)this.#go()}}class MarqueeConfigurator{constructor(){this.currentDirection='left';this.currentSpeed=.4;this.pauseOnHover=false;this.maskEnabled=false;this.multipleEnabled=false;this.isDragging=false;this.isHovering=false;this.dragEndCheckInterval=null;this.init()}init(){setTimeout(()=>{this.setupDirectionButtons();this.setupSpeedButtons();this.setupPauseSwitch();this.setupMaskSwitch();this.setupMultipleSwitch();this.setupDragDetection()},100)}setupDirectionButtons(){const buttons=document.querySelectorAll('.playground_settings_group:nth-child(1) .toggle_button');if(buttons.length<2)return;buttons.forEach((button,index)=>{if(button.getAttribute('aria-checked')==='true'){this.currentDirection=index===0?'left':'right'}});buttons[0].addEventListener('click',()=>{this.setDirection('left',buttons)});buttons[1].addEventListener('click',()=>{this.setDirection('right',buttons)})}setupSpeedButtons(){const buttons=document.querySelectorAll('.playground_settings_group:nth-child(2) .toggle_button');if(buttons.length<2)return;buttons.forEach((button,index)=>{if(button.getAttribute('aria-checked')==='true'){this.currentSpeed=index===0?.4:1.25}});buttons[0].addEventListener('click',()=>{this.setSpeed(.4,buttons)});buttons[1].addEventListener('click',()=>{this.setSpeed(1.25,buttons)})}setupPauseSwitch(){const switchButton=document.querySelector('[aria-labelledby="pause-label"]');if(!switchButton)return;this.pauseOnHover=switchButton.getAttribute('aria-checked')==='true';switchButton.addEventListener('click',()=>{this.togglePauseOnHover(switchButton)})}setupMaskSwitch(){const switchButton=document.querySelector('[aria-labelledby="mask-label"]');if(!switchButton)return;this.maskEnabled=switchButton.getAttribute('aria-checked')==='true';switchButton.addEventListener('click',()=>{this.toggleMask(switchButton)})}setupMultipleSwitch(){const switchButton=document.querySelector('[aria-labelledby="multiple-label"]');if(!switchButton)return;this.multipleEnabled=switchButton.getAttribute('aria-checked')==='true';switchButton.addEventListener('click',()=>{this.toggleMultiple(switchButton)})}setupDragDetection(){const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el)=>{const wrapper=el.querySelector('[bro-marquee-element="wrapper"]');if(!wrapper)return;wrapper.addEventListener('mousedown',()=>{this.isDragging=true;if(this.dragEndCheckInterval){clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null}});wrapper.addEventListener('touchstart',()=>{this.isDragging=true;if(this.dragEndCheckInterval){clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null}},{passive:true})});document.addEventListener('mouseup',()=>{if(this.isDragging){this.isDragging=false;this.startDragEndCheck()}});document.addEventListener('touchend',()=>{if(this.isDragging){this.isDragging=false;this.startDragEndCheck()}})}startDragEndCheck(){if(this.dragEndCheckInterval){clearInterval(this.dragEndCheckInterval)}let checks=0;const maxChecks=40;this.dragEndCheckInterval=setInterval(()=>{checks++;if(!this.pauseOnHover){clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null;return}const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');let allInertFinished=true;let anyRunning=false;let anyDragging=false;marqueeElements.forEach((el)=>{const instance=el.__marqueeInstance;if(!instance)return;if(instance.f.drag){anyDragging=true}if(instance.f.inert){allInertFinished=false}if(instance.aid){anyRunning=true}});if(!anyDragging&&allInertFinished&&!anyRunning&&!this.isHovering){marqueeElements.forEach((el)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.f.hover=0;instance.f.hstop=0;instance.f.drag=0;instance.f.inert=0;instance.f.wheel=0;instance.v=0});this.resumeAllMarquees();clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null;return}if(anyRunning&&!anyDragging&&allInertFinished){clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null;return}if(checks>=maxChecks){marqueeElements.forEach((el)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.f.hover=0;instance.f.hstop=0;instance.f.drag=0;instance.f.inert=0;instance.f.wheel=0;instance.v=0});this.resumeAllMarquees();clearInterval(this.dragEndCheckInterval);this.dragEndCheckInterval=null}},50)}setDirection(direction,buttons){if(this.currentDirection===direction)return;this.currentDirection=direction;buttons[0].setAttribute('aria-checked',direction==='left'?'true':'false');buttons[1].setAttribute('aria-checked',direction==='right'?'true':'false');const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el,index)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.stop();const newDir=index===1?(direction==='left'?'right':'left'):direction;instance.c.dir=newDir;el.setAttribute('bro-marquee-direction',newDir);if(newDir==='right'){instance.o=-instance.cw}else{instance.o=0}instance.w.style.transform=`translate3d(${instance.o}px,0,0)`;instance.forceStart()})}setSpeed(speed,buttons){if(this.currentSpeed===speed)return;this.currentSpeed=speed;buttons[0].setAttribute('aria-checked',speed===.4?'true':'false');buttons[1].setAttribute('aria-checked',speed===1.25?'true':'false');const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el,index)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.c.spd=speed;el.setAttribute('bro-marquee-speed',speed)})}togglePauseOnHover(switchButton){this.pauseOnHover=!this.pauseOnHover;switchButton.setAttribute('aria-checked',this.pauseOnHover?'true':'false');const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el,index)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.c.hover=this.pauseOnHover;el.setAttribute('bro-marquee-pause-on-hover',this.pauseOnHover?'true':'false');if(el.__hoverListenersAdded){el.removeEventListener('mouseenter',el.__mouseenterHandler);el.removeEventListener('mouseleave',el.__mouseleaveHandler);el.__hoverListenersAdded=false}if(this.pauseOnHover){el.__mouseenterHandler=()=>{if(this.isDragging)return;this.isHovering=true;this.pauseAllMarquees()};el.__mouseleaveHandler=()=>{if(this.isDragging)return;this.isHovering=false;this.resumeAllMarquees()};el.addEventListener('mouseenter',el.__mouseenterHandler);el.addEventListener('mouseleave',el.__mouseleaveHandler);el.__hoverListenersAdded=true}else{instance.f.hover=0;instance.f.hstop=0;this.isHovering=false;if(!instance.aid){instance.forceStart()}}})}toggleMask(switchButton){this.maskEnabled=!this.maskEnabled;switchButton.setAttribute('aria-checked',this.maskEnabled?'true':'false');const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el,index)=>{el.setAttribute('bro-marquee-mask',this.maskEnabled?'true':'false')})}toggleMultiple(switchButton){this.multipleEnabled=!this.multipleEnabled;switchButton.setAttribute('aria-checked',this.multipleEnabled?'true':'false');this.toggleMultipleMarquees(this.multipleEnabled)}toggleMultipleMarquees(show){const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el,index)=>{if(show){el.classList.remove('is-1','is-2','is-3','is-hide');const instance=el.__marqueeInstance;if(instance){instance.f.hover=0;instance.f.hstop=0;instance.f.drag=0;instance.f.inert=0;instance.f.wheel=0;instance.v=0;if(!instance.aid){instance.forceStart()}}}else{if(index===0){el.classList.add('is-1');el.classList.remove('is-2','is-3','is-hide');const instance=el.__marqueeInstance;if(instance){instance.f.hover=0;instance.f.hstop=0;instance.f.drag=0;instance.f.inert=0;instance.f.wheel=0;instance.v=0;if(!instance.aid){instance.forceStart()}}}else if(index===1){el.classList.add('is-2','is-hide');el.classList.remove('is-1','is-3');const instance=el.__marqueeInstance;if(instance){instance.stop()}}else if(index===2){el.classList.add('is-3','is-hide');el.classList.remove('is-1','is-2');const instance=el.__marqueeInstance;if(instance){instance.stop()}}}})}pauseAllMarquees(){const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.f.hover=1;if(instance.aid&&!instance.f.hstop){const hstopSpeed=instance.c.dir==='left'?-instance.c.spd:instance.c.spd;instance.f.hstop=1;instance.v=hstopSpeed;instance.stop();this.startHoverDecay(instance)}})}resumeAllMarquees(){const marqueeElements=document.querySelectorAll('[bro-marquee-element="marquee"]');marqueeElements.forEach((el)=>{const instance=el.__marqueeInstance;if(!instance)return;instance.f.hover=0;instance.f.hstop=0;instance.forceStart()})}startHoverDecay(instance){const friction=.88;const minVel=.05;let lastTime=null;const step=(time)=>{if(!instance.f.hover){instance.v=0;instance.f.hstop=0;return}if(!lastTime){lastTime=time;requestAnimationFrame(step);return}const multiplier=(time-lastTime)/16.67;lastTime=time;if(Math.abs(instance.v)<minVel){instance.v=0;instance.f.hstop=0;return}instance.o+=instance.v*multiplier;instance.v*=Math.pow(friction,multiplier);const w=instance.cw;const L=instance.c.dir==='left';if(L){while(instance.o<=-w)instance.o+=w;while(instance.o>0)instance.o-=w}else{while(instance.o>=0)instance.o-=w;while(instance.o<-w*2)instance.o+=w}instance.w.style.transform=`translate3d(${Math.round(instance.o*100)/100}px,0,0)`;requestAnimationFrame(step)};requestAnimationFrame(step)}}const init=()=>{document.querySelectorAll(`[${SEL}element="marquee"]`).forEach(el=>new InfiniteMarquee(el));const playground=document.querySelector('.playground_component');if(playground){new MarqueeConfigurator()}};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();window.BroInfiniteMarquee=InfiniteMarquee;window.initBroMarquees=init}();
+</script>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="why" class="u-section">
+        <div data-wf--spacer--variant="large" class="u-section-spacer w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3 u-ignore-trim"></div>
+        <div class="u-container">
+          <div class="tabs_wrap">
+            <div class="u-eyebrow-wrapper u-alignment-center">
+              <div class="u-eyebrow-layout">
+                <div class="u-eyebrow-text w-richtext">
+                  <h2>Why broMarquee</h2>
+                </div>
+              </div>
+            </div>
+            <div data-number="22" data-wf--typography-heading--variant="h2" class="u-text w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext u-alignment-center u-text-wrap-default">
+              <h3>Partner logo sections have become visual noise</h3>
+            </div>
+            <div data-number="44" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext u-alignment-center u-margin-bottom-7">
+              <p>Years of autoplay-only logo marquees taught both users and UX designers to tune them out.</p>
+            </div>
+            <div class="tabs_inner">
+              <div class="tabs_header">
+                <div aria-label="Direction" role="radiogroup" class="toggle_group is-large">
+                  <div aria-hidden="true" class="toggle_indicator is-large"></div><button role="radio" aria-checked="true" class="toggle_button is-large">Speed</button><button role="radio" aria-checked="false" class="toggle_button is-large">Visibility</button><button role="radio" aria-checked="false" class="toggle_button is-large">Control</button>
+                </div>
+              </div>
+              <div class="comparison_pane_wrap is-active is-1">
+                <article class="comparison_pane_content">
+                  <div class="comparison_pane_top">
+                    <div class="comparison_pane_eyebrow u-text-style-main">Speed</div>
+                    <div data-number="20" data-wf--typography-heading--variant="h3" class="u-text w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994 w-richtext  ">
+                      <h4>Speed drift across breakpoints</h4>
+                    </div>
+                  </div>
+                  <div data-number="60" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext  ">
+                    <p>As logos shrink, the loop shortens — the marquee feels faster.</p>
+                  </div>
+                  <div class="comparison_pane_bottom">
+                    <h4 class="comparison_pane_label u-text-style-small u-margin-bottom-3">Compare</h4>
+                    <dl class="comparison_pane_list">
+                      <div class="comparison_pane_item_wrap u-text-style-main u-margin-bottom-3"><dt class="comparison_pane_item_title">Typical behavior: </dt>
+                        <dd class="comparison_pane_item_text">Speed drifts across breakpoints.</dd>
+                      </div>
+                      <div class="comparison_pane_item_wrap"><dt class="comparison_pane_item_title is-accent">broMarquee: </dt>
+                        <dd class="comparison_pane_item_text">Speed stays consistent across breakpoints.</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </article>
+                <figure class="comparison_pane_visual">
+                  <div data-poster-url="videos/exmple-vid1_poster.0000000.jpg" data-video-urls="videos/exmple-vid1_mp4.mp4,videos/exmple-vid1_webm.webm" data-autoplay="false" data-loop="true" data-wf-ignore="true" class="comparison_pane_video w-background-video w-background-video-atom"><video id="f755d31e-b56d-abf4-18e5-810bb57d1d36-video" loop="" style="background-image:url(&quot;videos/exmple-vid1_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                      <source src="videos/exmple-vid1_mp4.mp4" data-wf-ignore="true">
+                      <source src="videos/exmple-vid1_webm.webm" data-wf-ignore="true">
+                    </video><noscript>
+                      <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid1_poster.0000000.jpg" alt="">
+                    </noscript>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="f755d31e-b56d-abf4-18e5-810bb57d1d36-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                  </div>
+                </figure>
+              </div>
+              <div class="comparison_pane_wrap">
+                <article class="comparison_pane_content">
+                  <div class="comparison_pane_top">
+                    <div class="comparison_pane_eyebrow u-text-style-main">Visibility</div>
+                    <div data-number="20" data-wf--typography-heading--variant="h3" class="u-text w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994 w-richtext  ">
+                      <h4>Desktop-only trust signals</h4>
+                    </div>
+                    <div data-number="60" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext  ">
+                      <p>The partner logo section disappears on small screens, even though it matters just as much on mobile.</p>
+                    </div>
+                  </div>
+                  <div class="comparison_pane_bottom">
+                    <h4 class="comparison_pane_label u-text-style-small u-margin-bottom-3">Compare</h4>
+                    <dl class="comparison_pane_list">
+                      <div class="comparison_pane_item_wrap u-margin-bottom-2"><dt class="comparison_pane_item_title">Typical behavior: </dt>
+                        <dd class="comparison_pane_item_text">Logos are hidden or removed on mobile.</dd>
+                      </div>
+                      <div class="comparison_pane_item_wrap"><dt class="comparison_pane_item_title is-accent">broMarquee: </dt>
+                        <dd class="comparison_pane_item_text">Logos stay visible and swipeable on every device.</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </article>
+                <figure class="comparison_pane_visual">
+                  <div data-poster-url="videos/exmple-vid2_poster.0000000.jpg" data-video-urls="videos/exmple-vid2_mp4.mp4,videos/exmple-vid2_webm.webm" data-autoplay="false" data-loop="true" data-wf-ignore="true" class="comparison_pane_video w-background-video w-background-video-atom"><video id="08f2c8a1-2b81-a474-ca45-ca8206de3be4-video" loop="" style="background-image:url(&quot;videos/exmple-vid2_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                      <source src="videos/exmple-vid2_mp4.mp4" data-wf-ignore="true">
+                      <source src="videos/exmple-vid2_webm.webm" data-wf-ignore="true">
+                    </video><noscript>
+                      <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid2_poster.0000000.jpg" alt="">
+                    </noscript>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="08f2c8a1-2b81-a474-ca45-ca8206de3be4-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                  </div>
+                </figure>
+              </div>
+              <div class="comparison_pane_wrap">
+                <article class="comparison_pane_content">
+                  <div class="comparison_pane_top">
+                    <div class="comparison_pane_eyebrow u-text-style-main">Control</div>
+                    <div data-number="20" data-wf--typography-heading--variant="h3" class="u-text w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994 w-richtext u-text-wrap-pretty">
+                      <h4>Interactive cues, no control</h4>
+                    </div>
+                    <div data-number="60" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext  ">
+                      <p>Users see visual cues to interact, but navigation remains passive.</p>
+                    </div>
+                  </div>
+                  <div class="comparison_pane_bottom">
+                    <h4 class="comparison_pane_label u-text-style-small u-margin-bottom-3">Compare</h4>
+                    <dl class="comparison_pane_list">
+                      <div class="comparison_pane_item_wrap u-margin-bottom-2"><dt class="comparison_pane_item_title">Typical behavior: </dt>
+                        <dd class="comparison_pane_item_text">Hover shows details, but the only way to browse is slow autoplay.</dd>
+                      </div>
+                      <div class="comparison_pane_item_wrap"><dt class="comparison_pane_item_title is-accent">broMarquee: </dt>
+                        <dd class="comparison_pane_item_text">Browse at your own pace — drag, wheel, or swipe.</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </article>
+                <figure class="comparison_pane_visual">
+                  <div data-poster-url="videos/exmple-vid3_poster.0000000.jpg" data-video-urls="videos/exmple-vid3_mp4.mp4,videos/exmple-vid3_webm.webm" data-autoplay="false" data-loop="true" data-wf-ignore="true" class="comparison_pane_video w-background-video w-background-video-atom"><video id="1e2a6473-d355-3a73-1e7c-41db1b3aeea6-video" loop="" style="background-image:url(&quot;videos/exmple-vid3_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                      <source src="videos/exmple-vid3_mp4.mp4" data-wf-ignore="true">
+                      <source src="videos/exmple-vid3_webm.webm" data-wf-ignore="true">
+                    </video><noscript>
+                      <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid3_poster.0000000.jpg" alt="">
+                    </noscript>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="1e2a6473-d355-3a73-1e7c-41db1b3aeea6-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                  </div>
+                </figure>
+              </div>
+              <div fs-table-element="table" fs-table-instance="compare_table" class="compare_table_instance">
+                <div data-wf--spacer--variant="small" class="u-section-spacer w-variant-d422cbd0-f212-c815-68df-63414354c21d u-ignore-trim"></div>
+                <h4 class="compare_table_title u-text-style-h3">Full Comparison</h4>
+                <div class="compare_table_contain">
+                  <div class="compare_table_mask"></div>
+                  <div class="compare_table_mask is-right"></div>
+                  <div class="compare_table_layout">
+                    <div class="compare_table_inner">
+                      <table class="compare_table_table">
+                        <thead class="compare_table_head">
+                          <tr class="compare_table_row">
+                            <th class="compare_table_header">Criteria</th>
+                            <th class="compare_table_header">CSS Animation</th>
+                            <th class="compare_table_header">Swiper.js</th>
+                            <th class="compare_table_header">broMarquee</th>
+                          </tr>
+                        </thead>
+                        <tbody class="compare_table_body">
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Size</td>
+                            <td class="compare_table_cell">0 KB</td>
+                            <td class="compare_table_cell">~150 KB</td>
+                            <td class="compare_table_cell">9 KB</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Infinite loop</td>
+                            <td class="compare_table_cell">⚠️ Manual clones</td>
+                            <td class="compare_table_cell">✅ Built-in</td>
+                            <td class="compare_table_cell">✅ Seamless</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Drag/Swipe</td>
+                            <td class="compare_table_cell">❌ Static</td>
+                            <td class="compare_table_cell">✅ Supported</td>
+                            <td class="compare_table_cell">✅ Supported</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Inertia</td>
+                            <td class="compare_table_cell">❌ None</td>
+                            <td class="compare_table_cell">✅ Built-in</td>
+                            <td class="compare_table_cell">✅ Physics-based</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Horizontal scroll</td>
+                            <td class="compare_table_cell">❌ None</td>
+                            <td class="compare_table_cell">⚠️ Scroll conflicts</td>
+                            <td class="compare_table_cell">✅ Smart axis detection</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Pause on hover</td>
+                            <td class="compare_table_cell">❌ No easing</td>
+                            <td class="compare_table_cell">✅ Smooth</td>
+                            <td class="compare_table_cell">✅ Inertia stop</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Synchronization</td>
+                            <td class="compare_table_cell">❌ None</td>
+                            <td class="compare_table_cell">⚠️ Same direction</td>
+                            <td class="compare_table_cell">✅ Multi-directional sync</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Intersection Observer</td>
+                            <td class="compare_table_cell">❌ Always runs</td>
+                            <td class="compare_table_cell">⚠️ Manual setup</td>
+                            <td class="compare_table_cell">✅ Auto pause offscreen (less CPU usage)</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Responsive speed</td>
+                            <td class="compare_table_cell">⚠️ Manual @media</td>
+                            <td class="compare_table_cell">✅ Manual JS</td>
+                            <td class="compare_table_cell">✅ Attributes</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">GPU acceleration</td>
+                            <td class="compare_table_cell">⚠️ Manual setup</td>
+                            <td class="compare_table_cell">✅ Built-in</td>
+                            <td class="compare_table_cell">✅ Built-in</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Accessibility</td>
+                            <td class="compare_table_cell">⚠️ Manual ARIA</td>
+                            <td class="compare_table_cell">⚠️ Clones read twice</td>
+                            <td class="compare_table_cell">✅ Auto aria-hidden</td>
+                          </tr>
+                          <tr class="compare_table_row">
+                            <td class="compare_table_cell is-main">Setup &amp; config</td>
+                            <td class="compare_table_cell">Custom CSS</td>
+                            <td class="compare_table_cell">JS API</td>
+                            <td class="compare_table_cell">Attribute-based config</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="compare_table_after"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-embed-js w-embed w-script">
+                <script>
+document.querySelectorAll('.tabs_wrap').forEach(tabsWrap => {
+  const toggleGroup = tabsWrap.querySelector('.toggle_group');
+  const buttons = toggleGroup.querySelectorAll('.toggle_button');
+  const indicator = toggleGroup.querySelector('.toggle_indicator');
+  const panes = tabsWrap.querySelectorAll('.comparison_pane_wrap');
+  // Функция для обновления ширины и позиции индикатора
+  function updateIndicator() {
+    const buttonWidth = buttons[0].getBoundingClientRect().width;
+    indicator.style.width = `${buttonWidth}px`;
+    const activeIndex = Array.from(buttons).findIndex(b => b.getAttribute('aria-checked') === 'true');
+    if (activeIndex !== -1) {
+      indicator.style.transform = `translateX(${activeIndex * buttonWidth}px)`;
+    }
+  }
+  updateIndicator();
+  window.addEventListener('resize', updateIndicator);
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.setAttribute('aria-checked', 'false'));
+      btn.setAttribute('aria-checked', 'true');
+      const buttonWidth = buttons[0].getBoundingClientRect().width;
+      indicator.style.transform = `translateX(${idx * buttonWidth}px)`;
+      panes.forEach(pane => pane.classList.remove('is-active'));
+      panes[idx].classList.add('is-active');
+      // Останавливаем все видео через клик по кнопке pause
+      panes.forEach(pane => {
+        const video = pane.querySelector('video');
+        const playButton = pane.querySelector('[data-w-bg-video-control]');
+        if (video && playButton && !video.paused) {
+          playButton.click();
+        }
+      });
+    });
+  });
+});
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="how-to-use" class="u-section">
+        <div data-wf--spacer--variant="large" class="u-section-spacer w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3 u-ignore-trim"></div>
+        <div class="u-container">
+          <div data-wf--content-wrapper--variant="left" class="u-display-contents">
+            <div class="u-content-wrapper  ">
+              <div data-number="22" data-wf--typography-heading--variant="h2" class="u-text w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext u-alignment-center u-text-wrap-default">
+                <h1>Getting started with bro<strong>Marquee</strong></h1>
+              </div>
+              <div data-number="44" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext u-alignment-center u-margin-bottom-7">
+                <p>Add a smooth, interactive marquee to your Webflow site in under 30 sec.</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps_wrap">
+            <div class="steps_list">
+              <div class="steps_item is-first">
+                <div class="steps_header">
+                  <div class="steps_left">
+                    <div class="steps_number">1</div>
+                    <h3 class="steps_title u-text-style-h5">Add this &lt;script&gt; inside the &lt;head&gt; tag of your page or project</h3>
+                  </div>
+                </div>
+                <div class="steps_content">
+                  <div class="steps_inner">
+                    <div class="steps_embed_content">
+                      <div class="steps_embed_text u-text-style-small"><code class="steps_embed_code">&lt;</code><span class="steps_embed_span_red"><code class="steps_embed_code">script </code></span><span class="steps_embed_span_green"><code class="steps_embed_code">defer src</code></span><code class="steps_embed_code">=&quot;</code><span class="steps_embed_span_blue"><code class="steps_embed_code">https://cdn.jsdelivr.net/npm/@bro-design/bro-marquee@1/dist/bro-marquee.min.js</code></span><code class="steps_embed_code">&quot;&gt;&lt;/</code><span class="steps_embed_span_red"><code class="steps_embed_code">script</code></span><code class="steps_embed_code">&gt;</code></div>
+                      <div class="steps_cta"><button data-trigger="hover focus" class="button_main_wrap is-disable-mobile">
+                          <div class="button_main_element">
+                            <div class="button_main_icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M16 3H4V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8 7H20V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H10C9.46957 21 8.96086 20.7893 8.58579 20.4142C8.21071 20.0391 8 19.5304 8 19V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg></div>
+                            <div class="button_main_text"><span bro-button="text">Copy Script</span></div>
+                          </div>
+                        </button>
+                        <div class="steps_cta_info">Use a desktop browser to copy the code.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="steps_item">
+                <div class="steps_header">
+                  <div class="steps_left">
+                    <div class="steps_number">2</div>
+                    <h3 class="steps_title u-text-style-h5">Copy/Paste broMarquee component into your Webflow page</h3>
+                  </div>
+                  <div class="steps_right">
+                    <div class="steps_cta"><button data-trigger="hover focus" data-copy-btn="1" data-component-id="marquee-component" bro-button="copy-button" class="button_main_wrap is-disable-mobile">
+                        <div class="button_main_element">
+                          <div class="button_main_icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+                              <path d="M16 3H4V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M8 7H20V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H10C9.46957 21 8.96086 20.7893 8.58579 20.4142C8.21071 20.0391 8 19.5304 8 19V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></div>
+                          <div class="button_main_text"><span bro-button="text">Copy Component</span><span data-copy-count="" class="button_main_span"> </span></div>
+                          <div bro-button="json" class="u-display-none"><code>{&quot;type&quot;:&quot;@webflow/XscpData&quot;,&quot;payload&quot;:{&quot;nodes&quot;:[{&quot;_id&quot;:&quot;890bb1f8-9bcc-abdc-110b-8f1daba2baf5&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;846b0ed7-9e34-6aeb-7380-4e76634e703f&quot;],&quot;children&quot;:[&quot;f470d7b6-5961-f7bd-dc44-61491825df83&quot;,&quot;674e816d-1e82-633c-1093-4c26d3f854a0&quot;,&quot;764e428d-5df3-1529-17a1-918d81ba6cfa&quot;,&quot;efef75aa-08b6-63bd-52df-b99151cd8ece&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f470d7b6-5961-f7bd-dc44-61491825df83&quot;,&quot;type&quot;:&quot;HtmlEmbed&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;5db2d79e-4080-58a4-77de-6bce8e5e609f&quot;],&quot;children&quot;:[],&quot;v&quot;:&quot;&lt;style&gt;\n/* bro-marquee mask */\n[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;]{--bro-marquee-mask:5rem;-webkit-mask-image:linear-gradient(to right,transparent,#000 var(--bro-marquee-mask),#000 calc(100% - var(--bro-marquee-mask)),transparent);mask-image:linear-gradient(to right,transparent,#000 var(--bro-marquee-mask),#000 calc(100% - var(--bro-marquee-mask)),transparent)}@media (max-width:991px){[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;][bro-marquee-mask-tablet=\&quot;false\&quot;]{-webkit-mask-image:none;mask-image:none}}@media (max-width:767px){[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;]{--bro-marquee-mask:2.5rem}[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;][bro-marquee-mask-mobile=\&quot;false\&quot;]{-webkit-mask-image:none;mask-image:none}}\n&lt;/style&gt;&quot;,&quot;data&quot;:{&quot;search&quot;:{&quot;exclude&quot;:true},&quot;embed&quot;:{&quot;meta&quot;:{&quot;html&quot;:&quot;&lt;style&gt;\n/* bro-marquee mask */\n[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;]{--bro-marquee-mask:5rem;-webkit-mask-image:linear-gradient(to right,transparent,#000 var(--bro-marquee-mask),#000 calc(100% - var(--bro-marquee-mask)),transparent);mask-image:linear-gradient(to right,transparent,#000 var(--bro-marquee-mask),#000 calc(100% - var(--bro-marquee-mask)),transparent)}@media (max-width:991px){[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;][bro-marquee-mask-tablet=\&quot;false\&quot;]{-webkit-mask-image:none;mask-image:none}}@media (max-width:767px){[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;]{--bro-marquee-mask:2.5rem}[bro-marquee-element=\&quot;marquee\&quot;][bro-marquee-mask=\&quot;true\&quot;][bro-marquee-mask-mobile=\&quot;false\&quot;]{-webkit-mask-image:none;mask-image:none}}\n&lt;/style&gt;&quot;,&quot;div&quot;:false,&quot;script&quot;:false,&quot;compilable&quot;:false,&quot;iframe&quot;:false},&quot;type&quot;:&quot;html&quot;},&quot;insideRTE&quot;:false,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;674e816d-1e82-633c-1093-4c26d3f854a0&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;8a3f2087-5c85-443d-c42d-bb7ec80793ee&quot;],&quot;children&quot;:[&quot;bec32aee-bfb4-b685-6f77-e0a37ca07cfd&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;marquee&quot;},{&quot;name&quot;:&quot;bro-marquee-mask&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-direction&quot;,&quot;value&quot;:&quot;left&quot;},{&quot;name&quot;:&quot;bro-marquee-pause-on-hover&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-sync-group&quot;,&quot;value&quot;:&quot;main&quot;},{&quot;name&quot;:&quot;bro-marquee-clones&quot;,&quot;value&quot;:&quot;3&quot;},{&quot;name&quot;:&quot;bro-marquee-speed&quot;,&quot;value&quot;:&quot;0.4&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bec32aee-bfb4-b685-6f77-e0a37ca07cfd&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;2b0957eb-9fb3-d3a7-7096-9f192aded8c9&quot;],&quot;children&quot;:[&quot;9ac9713c-ae7c-f1eb-bad7-833d3603e95c&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;wrapper&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;9ac9713c-ae7c-f1eb-bad7-833d3603e95c&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;0350a6b9-c615-7a54-e81d-88786c93475b&quot;],&quot;children&quot;:[&quot;26789a15-0164-5714-384d-2ba7e3880cc7&quot;,&quot;b9aa2efb-170c-e0a6-cbb9-9784f86f45fd&quot;,&quot;a2ca3340-4f89-5bd4-b89c-a61b49107738&quot;,&quot;91a55f5b-48f8-e4de-6f2f-d77210433e73&quot;,&quot;323c4066-a4b2-dc11-7b8c-2f8270b0ccec&quot;,&quot;3ec0d22e-330f-e397-5dd8-30534b56c52d&quot;,&quot;abe0a7e4-35f8-6080-ba08-c3748892511e&quot;,&quot;f02cfcb1-1d97-fcce-eebd-dc5ac60e4adf&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;list&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;26789a15-0164-5714-384d-2ba7e3880cc7&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;6901b5d5-ef5d-8d7a-5957-f02208948b26&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;6901b5d5-ef5d-8d7a-5957-f02208948b26&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;07864af4-4f56-cada-cbbc-d1ed4563b704&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;07864af4-4f56-cada-cbbc-d1ed4563b704&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421a86074ef5b6d9b26&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;101&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a86074ef5b6d9b26_logo-1.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;b9aa2efb-170c-e0a6-cbb9-9784f86f45fd&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;fb958c3d-f33e-f314-f8c8-e8b8ed7280ee&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;fb958c3d-f33e-f314-f8c8-e8b8ed7280ee&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;d7ba507f-f9d8-b5b9-6028-2603965ce6f2&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;d7ba507f-f9d8-b5b9-6028-2603965ce6f2&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;6934242008d2c90e1372fcce&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;109&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242008d2c90e1372fcce_logo-2.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;a2ca3340-4f89-5bd4-b89c-a61b49107738&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;048d7d22-5eab-1f43-ab9e-d06699470d71&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;048d7d22-5eab-1f43-ab9e-d06699470d71&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;ee47de53-43f1-1370-dd45-4fe6b7b7c7b7&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;ee47de53-43f1-1370-dd45-4fe6b7b7c7b7&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342420a981f0a1e87fdc3b&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;81&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420a981f0a1e87fdc3b_logo-3.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;91a55f5b-48f8-e4de-6f2f-d77210433e73&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;0e7f46b8-0804-21d6-7710-d8deda772b2b&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;0e7f46b8-0804-21d6-7710-d8deda772b2b&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;78f3d620-9a24-1e31-93f3-cd81a14bd05e&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;78f3d620-9a24-1e31-93f3-cd81a14bd05e&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;693424217fb2c444c1e17f06&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;135&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424217fb2c444c1e17f06_logo-4.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;323c4066-a4b2-dc11-7b8c-2f8270b0ccec&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;f93f15a7-091d-46ba-5dfe-5c51326bdeb0&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f93f15a7-091d-46ba-5dfe-5c51326bdeb0&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;bc00c60c-0ab5-cf33-8497-5132899235b5&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bc00c60c-0ab5-cf33-8497-5132899235b5&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;6934242118820fc925926e5f&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;139&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5f_logo-5.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;3ec0d22e-330f-e397-5dd8-30534b56c52d&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;de13a6e4-a198-c7cd-217c-1ca271244bde&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;de13a6e4-a198-c7cd-217c-1ca271244bde&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;f5a3366e-9253-ca59-2601-7fd47e550b25&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f5a3366e-9253-ca59-2601-7fd47e550b25&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;6934242118820fc925926e5b&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;95&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5b_logo-6.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;abe0a7e4-35f8-6080-ba08-c3748892511e&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;1d6e38f3-a737-0725-0b1e-735b05334632&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;1d6e38f3-a737-0725-0b1e-735b05334632&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;ad6e94f6-4fa5-f989-70ad-b91380763ed9&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;ad6e94f6-4fa5-f989-70ad-b91380763ed9&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342420f144d70cd6a766b6&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;97&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420f144d70cd6a766b6_logo-7.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f02cfcb1-1d97-fcce-eebd-dc5ac60e4adf&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;bbbabdcb-065c-8feb-12e7-f1d8acdd3293&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bbbabdcb-065c-8feb-12e7-f1d8acdd3293&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;41f4c304-c845-290d-0149-d3beee902c96&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;41f4c304-c845-290d-0149-d3beee902c96&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342420cc20b9751fed55fa&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;93&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420cc20b9751fed55fa_logo-8.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[{&quot;name&quot;:&quot;rel&quot;,&quot;value&quot;:&quot;preload&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;764e428d-5df3-1529-17a1-918d81ba6cfa&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;8a3f2087-5c85-443d-c42d-bb7ec80793ee&quot;],&quot;children&quot;:[&quot;2752b7b5-6655-3b35-0c19-40e82e77da3d&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;marquee&quot;},{&quot;name&quot;:&quot;bro-marquee-mask&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-direction&quot;,&quot;value&quot;:&quot;right&quot;},{&quot;name&quot;:&quot;bro-marquee-pause-on-hover&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-sync-group&quot;,&quot;value&quot;:&quot;main&quot;},{&quot;name&quot;:&quot;bro-marquee-clones&quot;,&quot;value&quot;:&quot;3&quot;},{&quot;name&quot;:&quot;bro-marquee-speed&quot;,&quot;value&quot;:&quot;0.4&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;2752b7b5-6655-3b35-0c19-40e82e77da3d&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;2b0957eb-9fb3-d3a7-7096-9f192aded8c9&quot;],&quot;children&quot;:[&quot;914551a4-b42c-7d90-5acd-8d0d48b80653&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;wrapper&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;914551a4-b42c-7d90-5acd-8d0d48b80653&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;0350a6b9-c615-7a54-e81d-88786c93475b&quot;],&quot;children&quot;:[&quot;9722bfa7-2492-f363-adda-01a2ac235434&quot;,&quot;bc4c93fc-502c-5024-9a06-9154302c3185&quot;,&quot;fc19e9fa-3f80-1206-acd6-1188146fa31a&quot;,&quot;d9446cef-2a2f-99ce-0b9d-fa01e94f2ca6&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;list&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;9722bfa7-2492-f363-adda-01a2ac235434&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;c8545233-ef35-3193-84be-2314c794a85f&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;c8545233-ef35-3193-84be-2314c794a85f&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;f664e611-3c24-2cb6-f5ad-0a088b409621&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f664e611-3c24-2cb6-f5ad-0a088b409621&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421a2a5272c7b0ce821&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;139&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a2a5272c7b0ce821_logo-15.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bc4c93fc-502c-5024-9a06-9154302c3185&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;a59ef0be-643a-ffc7-9147-4e196ffdb35d&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;a59ef0be-643a-ffc7-9147-4e196ffdb35d&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;bd878cf0-901b-4094-9c31-236cb70bca0a&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bd878cf0-901b-4094-9c31-236cb70bca0a&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421aea4c19b3ed53607&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;127&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421aea4c19b3ed53607_logo-16.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;fc19e9fa-3f80-1206-acd6-1188146fa31a&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;70040d15-0fd7-dcf5-b894-4239f556b3a5&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;70040d15-0fd7-dcf5-b894-4239f556b3a5&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;6664831c-2c51-39fc-84a4-6fa7e2929f96&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;6664831c-2c51-39fc-84a4-6fa7e2929f96&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421348669d6e15ec63a&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;131&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421348669d6e15ec63a_logo-17.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;d9446cef-2a2f-99ce-0b9d-fa01e94f2ca6&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;66190c7d-d463-33d9-9f0b-fafb47845c80&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;66190c7d-d463-33d9-9f0b-fafb47845c80&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;b2ab7004-4068-549a-f4ad-43b6fe73a344&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;b2ab7004-4068-549a-f4ad-43b6fe73a344&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421e211d80e5da3c73b&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;134&quot;,&quot;height&quot;:&quot;48&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421e211d80e5da3c73b_logo-18.svg&quot;,&quot;loading&quot;:&quot;lazy&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;efef75aa-08b6-63bd-52df-b99151cd8ece&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;8a3f2087-5c85-443d-c42d-bb7ec80793ee&quot;],&quot;children&quot;:[&quot;15aea488-97d3-a72e-479d-6d99244bb491&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;marquee&quot;},{&quot;name&quot;:&quot;bro-marquee-mask&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-direction&quot;,&quot;value&quot;:&quot;left&quot;},{&quot;name&quot;:&quot;bro-marquee-pause-on-hover&quot;,&quot;value&quot;:&quot;true&quot;},{&quot;name&quot;:&quot;bro-marquee-sync-group&quot;,&quot;value&quot;:&quot;main&quot;},{&quot;name&quot;:&quot;bro-marquee-clones&quot;,&quot;value&quot;:&quot;3&quot;},{&quot;name&quot;:&quot;bro-marquee-speed&quot;,&quot;value&quot;:&quot;0.4&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;15aea488-97d3-a72e-479d-6d99244bb491&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;2b0957eb-9fb3-d3a7-7096-9f192aded8c9&quot;],&quot;children&quot;:[&quot;75caab92-5a80-8326-6e78-1941b7befe1a&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;wrapper&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;75caab92-5a80-8326-6e78-1941b7befe1a&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;0350a6b9-c615-7a54-e81d-88786c93475b&quot;],&quot;children&quot;:[&quot;8e2ba15d-d21d-e0d6-0291-4531d521428a&quot;,&quot;837df4ae-d4d0-ed95-b4f2-b57188846e0e&quot;,&quot;eb9c77a2-5580-4468-9ce9-3e5efbe27a45&quot;,&quot;197b1804-d707-a835-3e02-82182f5f0703&quot;,&quot;0ecd8b45-8e47-6fa6-0129-a405874e4f7b&quot;,&quot;af1de675-5e82-1bf4-e1eb-7d2908c9c917&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[{&quot;name&quot;:&quot;bro-marquee-element&quot;,&quot;value&quot;:&quot;list&quot;}],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;8e2ba15d-d21d-e0d6-0291-4531d521428a&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;f1c2342e-b6be-a21e-0f81-a540beb61356&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f1c2342e-b6be-a21e-0f81-a540beb61356&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;048e1705-7f74-a353-02a4-155dccefa614&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;048e1705-7f74-a353-02a4-155dccefa614&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342420c364fb076ce6bdfe&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420c364fb076ce6bdfe_logo-9.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;837df4ae-d4d0-ed95-b4f2-b57188846e0e&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;bf51e603-71a7-ccf0-5668-13e5317cce91&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;bf51e603-71a7-ccf0-5668-13e5317cce91&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;1a851ef0-98a1-7ff3-d2a6-d8000e5ab659&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;1a851ef0-98a1-7ff3-d2a6-d8000e5ab659&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;693424214ae2cee20291cf7b&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf7b_logo-10.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;eb9c77a2-5580-4468-9ce9-3e5efbe27a45&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;23fbc5b3-4662-ce14-f2a6-83c4ecc587b0&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;23fbc5b3-4662-ce14-f2a6-83c4ecc587b0&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;90119eac-1cc8-78bc-fbde-2e05948f9b85&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;90119eac-1cc8-78bc-fbde-2e05948f9b85&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;6934242118e0727241930629&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118e0727241930629_logo-11.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;197b1804-d707-a835-3e02-82182f5f0703&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;6ff5b9b9-5034-78c1-0375-f8ef349ea348&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;6ff5b9b9-5034-78c1-0375-f8ef349ea348&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;f12c8702-2bef-ea5c-2681-19a192680be6&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;f12c8702-2bef-ea5c-2681-19a192680be6&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421c7e06cc384963918&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421c7e06cc384963918_logo-12.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;0ecd8b45-8e47-6fa6-0129-a405874e4f7b&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;c39cd10c-26c5-b9ee-2a0c-4a876d8066bc&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;c39cd10c-26c5-b9ee-2a0c-4a876d8066bc&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;aed9cae0-8750-18c0-ee56-0e17786dda33&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;aed9cae0-8750-18c0-ee56-0e17786dda33&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;693424214ae2cee20291cf8d&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf8d_logo-13.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;af1de675-5e82-1bf4-e1eb-7d2908c9c917&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;],&quot;children&quot;:[&quot;b98cfef4-3f7e-3c51-f2c6-ca24b36c7632&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;b98cfef4-3f7e-3c51-f2c6-ca24b36c7632&quot;,&quot;type&quot;:&quot;Block&quot;,&quot;tag&quot;:&quot;div&quot;,&quot;classes&quot;:[&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;],&quot;children&quot;:[&quot;eadf3f2c-b752-3737-9c47-0bed42c9ddb8&quot;],&quot;data&quot;:{&quot;text&quot;:false,&quot;tag&quot;:&quot;div&quot;,&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;attr&quot;:{&quot;id&quot;:&quot;&quot;},&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}},{&quot;_id&quot;:&quot;eadf3f2c-b752-3737-9c47-0bed42c9ddb8&quot;,&quot;type&quot;:&quot;Image&quot;,&quot;tag&quot;:&quot;img&quot;,&quot;classes&quot;:[&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;],&quot;children&quot;:[],&quot;data&quot;:{&quot;img&quot;:{&quot;id&quot;:&quot;69342421b4b6f8e175eed008&quot;},&quot;srcsetDisabled&quot;:false,&quot;attr&quot;:{&quot;width&quot;:&quot;auto&quot;,&quot;height&quot;:&quot;auto&quot;,&quot;alt&quot;:&quot;__wf_reserved_inherit&quot;,&quot;src&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421b4b6f8e175eed008_logo-14.svg&quot;,&quot;loading&quot;:&quot;eager&quot;,&quot;id&quot;:&quot;&quot;},&quot;sizes&quot;:[],&quot;devlink&quot;:{&quot;runtimeProps&quot;:{},&quot;slot&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;&quot;,&quot;xattr&quot;:[],&quot;search&quot;:{&quot;exclude&quot;:false},&quot;visibility&quot;:{&quot;conditions&quot;:[]}}}],&quot;styles&quot;:[{&quot;_id&quot;:&quot;846b0ed7-9e34-6aeb-7380-4e76634e703f&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_component&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;5db2d79e-4080-58a4-77de-6bce8e5e609f&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_css&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;display: none;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;8a3f2087-5c85-443d-c42d-bb7ec80793ee&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_row&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;position: relative; z-index: 1; display: flex; overflow: hidden; width: 100%; max-width: 100%;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[&quot;37753dd4-1290-793f-2979-5d224e1e9a4f&quot;,&quot;b39ec4da-3086-e23a-582a-14a8ec43f277&quot;,&quot;5d0d2b2e-24a8-365c-3a79-c5646048b276&quot;,&quot;0fe5d56b-4797-879c-c54d-9be9bed3f98a&quot;],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;2b0957eb-9fb3-d3a7-7096-9f192aded8c9&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_wrap&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;display: flex;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;0350a6b9-c615-7a54-e81d-88786c93475b&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_list&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;display: flex;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;36d85a0b-2ec8-4087-845b-4d48ef5b1c48&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_item&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;display: flex; margin-right: 3.5rem; padding-top: 1rem; padding-bottom: 1rem; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; flex-basis: auto; text-align: center;&quot;,&quot;variants&quot;:{&quot;medium&quot;:{&quot;styleLess&quot;:&quot;margin-right: 2rem;&quot;},&quot;small&quot;:{&quot;styleLess&quot;:&quot;padding-top: 0.75rem; padding-bottom: 0.75rem;&quot;}},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;33ab312c-6857-0eb0-0ea6-5dcb8b6f3459&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_content&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;&quot;,&quot;variants&quot;:{},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null},{&quot;_id&quot;:&quot;a9bf7811-7f6e-ee99-9488-a6a66f08337f&quot;,&quot;fake&quot;:false,&quot;type&quot;:&quot;class&quot;,&quot;name&quot;:&quot;bro_marquee_visual&quot;,&quot;namespace&quot;:&quot;&quot;,&quot;comb&quot;:&quot;&quot;,&quot;styleLess&quot;:&quot;width: auto; height: 4rem; max-width: none; object-fit: contain; aspect-ratio: @raw&lt;|attr(width) / attr(height)|&gt;;&quot;,&quot;variants&quot;:{&quot;small&quot;:{&quot;styleLess&quot;:&quot;height: 2.75rem;&quot;}},&quot;children&quot;:[],&quot;createdBy&quot;:&quot;5550e61a76e0160f1de897d7&quot;,&quot;origin&quot;:null,&quot;selector&quot;:null}],&quot;assets&quot;:[{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421e211d80e5da3c73b_logo-18.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:134,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421e211d80e5da3c73b_logo-18.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.097Z&quot;,&quot;origFileName&quot;:&quot;logo-18.svg&quot;,&quot;fileHash&quot;:&quot;e5638220ea67435865ce47d5e153db14&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421e211d80e5da3c73b_logo-18.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421e211d80e5da3c73b_logo-18.svg&quot;,&quot;_id&quot;:&quot;69342421e211d80e5da3c73b&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.097Z&quot;,&quot;fileSize&quot;:17076,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420c364fb076ce6bdfe_logo-9.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:121,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342420c364fb076ce6bdfe_logo-9.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:00.914Z&quot;,&quot;origFileName&quot;:&quot;logo-9.svg&quot;,&quot;fileHash&quot;:&quot;8e2709f03dcb6669ca400a1d0af64dda&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342420c364fb076ce6bdfe_logo-9.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420c364fb076ce6bdfe_logo-9.svg&quot;,&quot;_id&quot;:&quot;69342420c364fb076ce6bdfe&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:00.914Z&quot;,&quot;fileSize&quot;:3912,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5f_logo-5.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:139,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;6934242118820fc925926e5f_logo-5.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.121Z&quot;,&quot;origFileName&quot;:&quot;logo-5.svg&quot;,&quot;fileHash&quot;:&quot;d07e75a9452cd508a25ac28c3c18086e&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/6934242118820fc925926e5f_logo-5.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5f_logo-5.svg&quot;,&quot;_id&quot;:&quot;6934242118820fc925926e5f&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.121Z&quot;,&quot;fileSize&quot;:16523,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5b_logo-6.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:95,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;6934242118820fc925926e5b_logo-6.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.113Z&quot;,&quot;origFileName&quot;:&quot;logo-6.svg&quot;,&quot;fileHash&quot;:&quot;d37cbf1b431259aed04cd186dfe31474&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/6934242118820fc925926e5b_logo-6.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118820fc925926e5b_logo-6.svg&quot;,&quot;_id&quot;:&quot;6934242118820fc925926e5b&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.113Z&quot;,&quot;fileSize&quot;:8478,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421b4b6f8e175eed008_logo-14.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:131,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421b4b6f8e175eed008_logo-14.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.277Z&quot;,&quot;origFileName&quot;:&quot;logo-14.svg&quot;,&quot;fileHash&quot;:&quot;511414dc62194d79bfffb97305d71147&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421b4b6f8e175eed008_logo-14.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421b4b6f8e175eed008_logo-14.svg&quot;,&quot;_id&quot;:&quot;69342421b4b6f8e175eed008&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.277Z&quot;,&quot;fileSize&quot;:10388,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118e0727241930629_logo-11.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:126,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;6934242118e0727241930629_logo-11.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.305Z&quot;,&quot;origFileName&quot;:&quot;logo-11.svg&quot;,&quot;fileHash&quot;:&quot;dc54d3ea1c54d107b1a2f47f0c91df7e&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/6934242118e0727241930629_logo-11.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242118e0727241930629_logo-11.svg&quot;,&quot;_id&quot;:&quot;6934242118e0727241930629&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.305Z&quot;,&quot;fileSize&quot;:5381,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf7b_logo-10.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:69,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;693424214ae2cee20291cf7b_logo-10.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.299Z&quot;,&quot;origFileName&quot;:&quot;logo-10.svg&quot;,&quot;fileHash&quot;:&quot;b59c535d311ff9997414e7feab9e3d07&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/693424214ae2cee20291cf7b_logo-10.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf7b_logo-10.svg&quot;,&quot;_id&quot;:&quot;693424214ae2cee20291cf7b&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.299Z&quot;,&quot;fileSize&quot;:5350,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421aea4c19b3ed53607_logo-16.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:127,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421aea4c19b3ed53607_logo-16.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.271Z&quot;,&quot;origFileName&quot;:&quot;logo-16.svg&quot;,&quot;fileHash&quot;:&quot;567005b15264ee74769529473b161a50&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421aea4c19b3ed53607_logo-16.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421aea4c19b3ed53607_logo-16.svg&quot;,&quot;_id&quot;:&quot;69342421aea4c19b3ed53607&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.271Z&quot;,&quot;fileSize&quot;:6793,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf8d_logo-13.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:71,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;693424214ae2cee20291cf8d_logo-13.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.354Z&quot;,&quot;origFileName&quot;:&quot;logo-13.svg&quot;,&quot;fileHash&quot;:&quot;83c28e78441fbd56e2e855221ff80119&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/693424214ae2cee20291cf8d_logo-13.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424214ae2cee20291cf8d_logo-13.svg&quot;,&quot;_id&quot;:&quot;693424214ae2cee20291cf8d&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.354Z&quot;,&quot;fileSize&quot;:17246,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420f144d70cd6a766b6_logo-7.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:97,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342420f144d70cd6a766b6_logo-7.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:00.849Z&quot;,&quot;origFileName&quot;:&quot;logo-7.svg&quot;,&quot;fileHash&quot;:&quot;b1d63ebc70486bc75738a9a892739ca0&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342420f144d70cd6a766b6_logo-7.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420f144d70cd6a766b6_logo-7.svg&quot;,&quot;_id&quot;:&quot;69342420f144d70cd6a766b6&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:00.849Z&quot;,&quot;fileSize&quot;:3190,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242008d2c90e1372fcce_logo-2.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:109,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;6934242008d2c90e1372fcce_logo-2.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:00.988Z&quot;,&quot;origFileName&quot;:&quot;logo-2.svg&quot;,&quot;fileHash&quot;:&quot;c40e27907bf16b9315f16929bdf5a760&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/6934242008d2c90e1372fcce_logo-2.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/6934242008d2c90e1372fcce_logo-2.svg&quot;,&quot;_id&quot;:&quot;6934242008d2c90e1372fcce&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:00.988Z&quot;,&quot;fileSize&quot;:9718,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421348669d6e15ec63a_logo-17.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:131,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421348669d6e15ec63a_logo-17.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.167Z&quot;,&quot;origFileName&quot;:&quot;logo-17.svg&quot;,&quot;fileHash&quot;:&quot;eb10baf0fdbdb62355592323206e4614&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421348669d6e15ec63a_logo-17.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421348669d6e15ec63a_logo-17.svg&quot;,&quot;_id&quot;:&quot;69342421348669d6e15ec63a&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.167Z&quot;,&quot;fileSize&quot;:44531,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a2a5272c7b0ce821_logo-15.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:139,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421a2a5272c7b0ce821_logo-15.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.270Z&quot;,&quot;origFileName&quot;:&quot;logo-15.svg&quot;,&quot;fileHash&quot;:&quot;90cba1a247a0810cdd297f8aec308dcc&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421a2a5272c7b0ce821_logo-15.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a2a5272c7b0ce821_logo-15.svg&quot;,&quot;_id&quot;:&quot;69342421a2a5272c7b0ce821&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.270Z&quot;,&quot;fileSize&quot;:6181,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a86074ef5b6d9b26_logo-1.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:101,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421a86074ef5b6d9b26_logo-1.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.297Z&quot;,&quot;origFileName&quot;:&quot;logo-1.svg&quot;,&quot;fileHash&quot;:&quot;9816c81685f0ee9024bc5ead3e2e885d&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421a86074ef5b6d9b26_logo-1.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421a86074ef5b6d9b26_logo-1.svg&quot;,&quot;_id&quot;:&quot;69342421a86074ef5b6d9b26&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.297Z&quot;,&quot;fileSize&quot;:4094,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420cc20b9751fed55fa_logo-8.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:93,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342420cc20b9751fed55fa_logo-8.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:00.931Z&quot;,&quot;origFileName&quot;:&quot;logo-8.svg&quot;,&quot;fileHash&quot;:&quot;d47b5ae1a89cd9c00337f30d76ba6564&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342420cc20b9751fed55fa_logo-8.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420cc20b9751fed55fa_logo-8.svg&quot;,&quot;_id&quot;:&quot;69342420cc20b9751fed55fa&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:00.931Z&quot;,&quot;fileSize&quot;:4991,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420a981f0a1e87fdc3b_logo-3.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:81,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342420a981f0a1e87fdc3b_logo-3.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:00.992Z&quot;,&quot;origFileName&quot;:&quot;logo-3.svg&quot;,&quot;fileHash&quot;:&quot;78ee8d1af9996a47d9581211d4d7cae3&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342420a981f0a1e87fdc3b_logo-3.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342420a981f0a1e87fdc3b_logo-3.svg&quot;,&quot;_id&quot;:&quot;69342420a981f0a1e87fdc3b&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:00.992Z&quot;,&quot;fileSize&quot;:1891,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424217fb2c444c1e17f06_logo-4.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:135,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;693424217fb2c444c1e17f06_logo-4.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.099Z&quot;,&quot;origFileName&quot;:&quot;logo-4.svg&quot;,&quot;fileHash&quot;:&quot;fc19591f54dcc0ebefb1dbd0e2ba8ad9&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/693424217fb2c444c1e17f06_logo-4.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/693424217fb2c444c1e17f06_logo-4.svg&quot;,&quot;_id&quot;:&quot;693424217fb2c444c1e17f06&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.099Z&quot;,&quot;fileSize&quot;:8071,&quot;localizedSettings&quot;:{}},{&quot;cdnUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421c7e06cc384963918_logo-12.svg&quot;,&quot;siteId&quot;:&quot;693013aef21b2c53ad08522e&quot;,&quot;width&quot;:40,&quot;isHD&quot;:false,&quot;height&quot;:48,&quot;fileName&quot;:&quot;69342421c7e06cc384963918_logo-12.svg&quot;,&quot;createdOn&quot;:&quot;2025-12-06T12:40:01.264Z&quot;,&quot;origFileName&quot;:&quot;logo-12.svg&quot;,&quot;fileHash&quot;:&quot;a340e3208fa3544ee1502fefa7bf2584&quot;,&quot;translationLoading&quot;:false,&quot;variants&quot;:[],&quot;mimeType&quot;:&quot;image/svg+xml&quot;,&quot;isFromWellKnownFolder&quot;:false,&quot;s3Url&quot;:&quot;https://s3.amazonaws.com/webflow-prod-assets/693013aef21b2c53ad08522e/69342421c7e06cc384963918_logo-12.svg&quot;,&quot;thumbUrl&quot;:&quot;https://cdn.prod.website-files.com/693013aef21b2c53ad08522e/69342421c7e06cc384963918_logo-12.svg&quot;,&quot;_id&quot;:&quot;69342421c7e06cc384963918&quot;,&quot;updatedOn&quot;:&quot;2025-12-06T12:40:01.264Z&quot;,&quot;fileSize&quot;:253,&quot;localizedSettings&quot;:{}}],&quot;ix1&quot;:[],&quot;ix2&quot;:{&quot;interactions&quot;:[],&quot;events&quot;:[],&quot;actionLists&quot;:[]}},&quot;meta&quot;:{&quot;droppedLinks&quot;:0,&quot;dynBindRemovedCount&quot;:0,&quot;dynListBindRemovedCount&quot;:0,&quot;paginationRemovedCount&quot;:0,&quot;universalBindingsRemovedCount&quot;:0,&quot;unlinkedSymbolCount&quot;:0,&quot;codeComponentsRemovedCount&quot;:0}}</code><br></div>
+                        </div>
+                      </button>
+                      <div class="steps_cta_info">Use a desktop browser to copy the code.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="steps_content">
+                  <div class="steps_inner"><img src="images/placeholder.svg" loading="lazy" alt="" class="steps_visual"></div>
+                </div>
+              </div>
+              <div class="steps_item">
+                <div class="steps_header">
+                  <div class="steps_left">
+                    <div class="steps_number">3</div>
+                    <h3 class="steps_title u-text-style-h5">Customize with attributes (optional)</h3>
+                  </div>
+                </div>
+                <div class="steps_content">
+                  <div class="steps_inner"><img src="images/placeholder.svg" loading="lazy" alt="" class="steps_visual">
+                    <div data-wf--spacer--variant="small" class="u-section-spacer w-variant-d422cbd0-f212-c815-68df-63414354c21d u-ignore-trim"></div>
+                    <div class="steps_table">
+                      <h4 class="compare_table_title u-text-style-h3">Parameter attributes</h4>
+                      <div class="compare_table_contain">
+                        <div class="compare_table_mask"></div>
+                        <div class="compare_table_mask is-right"></div>
+                        <div class="compare_table_layout">
+                          <div class="compare_table_inner">
+                            <table class="compare_table_table">
+                              <thead class="compare_table_head">
+                                <tr class="compare_table_row">
+                                  <th class="compare_table_header">Name</th>
+                                  <th class="compare_table_header">Type</th>
+                                  <th class="compare_table_header">Default</th>
+                                  <th class="compare_table_header">Description</th>
+                                </tr>
+                              </thead>
+                              <tbody class="compare_table_body">
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-element</td>
+                                  <td class="compare_table_cell is-line">&quot;marquee&quot; | &quot;wrapper&quot; | &quot;list&quot;</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Required. Defines the element role in marquee structure.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-speed</td>
+                                  <td class="compare_table_cell">number</td>
+                                  <td class="compare_table_cell">0.4</td>
+                                  <td class="compare_table_cell">Animation speed in pixels per frame.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-speed-tablet</td>
+                                  <td class="compare_table_cell">number</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Speed override for tablet (≤991px).</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-speed-mobile</td>
+                                  <td class="compare_table_cell">number</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Speed override for mobile (≤767px).</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-direction</td>
+                                  <td class="compare_table_cell">&quot;left&quot; | &quot;right&quot;</td>
+                                  <td class="compare_table_cell">&quot;left&quot;</td>
+                                  <td class="compare_table_cell">Scroll direction of the marquee.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-clones</td>
+                                  <td class="compare_table_cell">number</td>
+                                  <td class="compare_table_cell">1</td>
+                                  <td class="compare_table_cell">Number of content clones for seamless loop.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-pause-on-hover</td>
+                                  <td class="compare_table_cell">&quot;true&quot;</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Pause animation on mouse hover with inertia easing.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-sync-group</td>
+                                  <td class="compare_table_cell">string</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Group name to synchronize multiple marquees. Supports opposite directions.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-mask</td>
+                                  <td class="compare_table_cell">&quot;true&quot;</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Enable gradient fade mask on edges.</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-mask-tablet</td>
+                                  <td class="compare_table_cell">&quot;false&quot;</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Disable mask on tablet (≤991px).</td>
+                                </tr>
+                                <tr class="compare_table_row">
+                                  <td class="compare_table_cell is-main">bro-marquee-mask-mobile</td>
+                                  <td class="compare_table_cell">&quot;false&quot;</td>
+                                  <td class="compare_table_cell">—</td>
+                                  <td class="compare_table_cell">Disable mask on mobile (≤767px).</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="compare_table_after"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contributing" class="u-section">
+        <div data-wf--spacer--variant="large" class="u-section-spacer w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3 u-ignore-trim"></div>
+        <div class="u-container">
+          <div class="contact_wrap">
+            <div class="contact_layout">
+              <div class="contact_grid">
+                <div class="contact_left">
+                  <div class="contact_photo">
+                    <div data-wf--visual-image--variant="cover" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28" style=""><img src="images/dmitrii-tregubov.avif" loading="lazy" alt="Дмитрий Трегубов @dimaWebflow" class="u-image"></div>
+                  </div>
+                </div>
+                <div id="w-node-c8c4f5de-d0e1-d19b-30cf-28474576ae43-ad0852e2" class="contact_right">
+                  <div data-wf--content-wrapper--variant="left" class="u-display-contents">
+                    <div class="u-content-wrapper u-margin-bottom-6">
+                      <div data-number="22" data-wf--typography-heading--variant="h2" class="u-text w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext u-text-wrap-default">
+                        <h2>Get in touch</h2>
+                      </div>
+                      <div data-number="60" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext  ">
+                        <p>I&#x27;d love your help in making broMarquee better 🙌</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-number="22" data-wf--typography-heading--variant="h5" class="u-text w-variant-326a9562-3263-06da-e8ef-16981fd70f1c w-richtext u-text-wrap-default">
+                    <h3>How to contribute:</h3>
+                  </div>
+                  <ul role="list" class="list_static_wrap">
+                    <li class="list_static_item">
+                      <h3 class="list_static_title u-text-style-h6">Share feedback</h3>
+                      <p class="list_static_text">(suggest improvements or new features)</p>
+                    </li>
+                    <li class="list_static_item">
+                      <h3 class="list_static_title u-text-style-h6">Report bugs</h3>
+                      <p class="list_static_text">(help identify issues and edge cases)</p>
+                    </li>
+                    <li class="list_static_item">
+                      <h3 class="list_static_title u-text-style-h6">Show support</h3>
+                      <p class="list_static_text">(react to <a href="#" class="u-text-link">the announcement post on LinkedIn</a>)</p>
+                    </li>
+                  </ul>
+                  <div data-number="40" data-wf--typography-heading--variant="h6" class="u-text w-variant-823daff2-fd84-8da0-4ed1-92a39b869ad0 w-richtext u-text-wrap-default">
+                    <h3>Contact info:</h3>
+                  </div>
+                  <div class="contact_text u-rich-text u-text-style-large is-last w-richtext">
+                    <p>
+                      <a href="https://www.linkedin.com/in/tregubov-design/" target="_blank" class="u-text-link">LinkedIn</a>, <a href="https://www.upwork.com/freelancers/~01487404f5d05a60dd" target="_blank" class="u-text-link">Upwork</a>, <a href="mailto:dima@bro-design.pro" class="u-text-link">dima@bro-design.pro</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="footer_copyright u-rich-text w-richtext">
+                <p>Released under the MIT License</p>
+                <p>Site built with <a href="https://lumos.timothyricks.com/" target="_blank" class="u-text-link">Lumos Framework</a> (by Timothy Ricks)</p>
+                <p>Copyright © 2025-2026 <a href="http://bro-design.pro/" target="_blank" class="u-text-link">bro-design.pro</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-wf--spacer--variant="small" class="u-section-spacer w-variant-d422cbd0-f212-c815-68df-63414354c21d u-ignore-trim"></div>
+      </section>
+      <div id="copyToast" class="toast_notification_wrap">
+        <div class="toast_notification_text">Copied to clipboard 👌</div>
+      </div>
+    </main>
+  </div>
+  <div class="button-count w-embed w-script">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+(() => {
+  const SUPABASE_URL = "https://wbbfkbnckwddhyonzqiy.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_3rQ_wazzLJemodV96nl1BQ_i63C6Iv-";
+  const PAGE = location.pathname;
+  const VISITOR_KEY = "copy_visitor_id";
+  const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const getVisitorId = () => {
+    let id = localStorage.getItem(VISITOR_KEY);
+    if (!id) {
+      id = (crypto?.randomUUID ? crypto.randomUUID() : (Date.now() + "_" + Math.random().toString(16).slice(2)));
+      localStorage.setItem(VISITOR_KEY, id);
+    }
+    return id;
+  };
+  const clickedKey = (component_id) => `copied_${PAGE}__${component_id}`;
+  const hasClicked = (component_id) => localStorage.getItem(clickedKey(component_id)) === "1";
+  const markClicked = (component_id) => localStorage.setItem(clickedKey(component_id), "1");
+  const getCount = async (component_id) => {
+    const { count = 0, error } = await db
+      .from("copy_clicks")
+      .select("*", { count: "exact", head: true })
+      .eq("page", PAGE)
+      .eq("component_id", component_id);
+    if (error) console.error(error);
+    return count || 0;
+  };
+  const setCountInBtn = (btn, n) => {
+    const countEl = btn.querySelector("[data-copy-count]");
+    if (countEl) countEl.textContent = n;
+    else btn.dataset.copyCount = String(n);
+  };
+  const initButton = async (btn) => {
+    const component_id = btn.dataset.componentId || "default";
+    setCountInBtn(btn, await getCount(component_id));
+    btn.addEventListener("click", async () => {
+      if (hasClicked(component_id)) return;
+      btn.disabled = true;
+      const visitor_id = getVisitorId();
+      const { error } = await db.from("copy_clicks").insert({ page: PAGE, component_id, visitor_id });
+      btn.disabled = false;
+      if (error) {
+        console.error(error);
+        if (String(error.code) === "23505") {
+          markClicked(component_id);
+          setCountInBtn(btn, await getCount(component_id));
+        }
+        return;
+      }
+      markClicked(component_id);
+      setCountInBtn(btn, await getCount(component_id));
+    });
+  };
+  document.querySelectorAll('[data-copy-btn="1"]').forEach(initButton);
+})();
+</script>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=693013aef21b2c53ad08522e" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/bro-marquee.js" type="text/javascript"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js" type="text/javascript"></script>
+  <script>function showToast(){const t=document.getElementById("copyToast");t.classList.add("is-show"),setTimeout(()=>t.classList.remove("is-show"),1500)}document.querySelectorAll(".steps_cta .button_main_wrap").forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=t.querySelector('[bro-button="text"]'),n=t.closest(".steps_embed_content"),c=n&&n.querySelector(".steps_embed_text");if(!c)return;const s=c.textContent.trim();o.textContent="Copying...",navigator.clipboard.writeText(s).then(()=>{showToast(),setTimeout(()=>{o.textContent="Copy Script"},1200)}).catch(t=>{console.error("Failed to copy:",t),o.textContent="Copy Script"})})});const copyButton=document.querySelector("[bro-button=copy-button]");copyButton&&copyButton.addEventListener("click",t=>{const e=copyButton.querySelector('[bro-button="text"]');e.textContent="Copying...";const o=t=>{t.preventDefault();const e=copyButton.querySelector('[bro-button="json"]').textContent;t.clipboardData.setData("application/json",e)};document.addEventListener("copy",o),document.execCommand("copy"),document.removeEventListener("copy",o),showToast(),setTimeout(()=>{e.textContent="Copy Component"},1e3)});</script>
+</body>
+</html>
