@@ -5527,6 +5527,10 @@ figure {
   border-radius: 0;
 }
 
+.button_main_wrap.is-disable-mobile {
+  border-radius: var(--radius--small);
+}
+
 .button_toggle_wrap, .button_arrow_wrap, .button_close_wrap {
   border-radius: var(--radius--round);
   display: inline-block;
