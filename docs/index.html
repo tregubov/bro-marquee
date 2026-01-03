@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--  Last Published: Sat Jan 03 2026 10:19:47 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="693013b1f21b2c53ad0852e2" data-wf-site="693013aef21b2c53ad08522e" lang="en">
 <head>
   <meta charset="utf-8">
@@ -42,6 +42,118 @@
     "@type": "Organization",
     "name": "bro-design.pro"
   }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is broMarquee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "broMarquee is a free, lightweight JavaScript library for building smooth, infinite logo marquees in Webflow — with real user control including drag, wheel, touch, and inertia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is broMarquee free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. broMarquee is free and open-source under the MIT License. You can use it in both personal and commercial projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What license is broMarquee released under?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "broMarquee is released under the MIT License — a permissive open-source license that allows commercial use, modification, and distribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install broMarquee in Webflow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add the broMarquee script via CDN in the <head> of your page or project. Then copy and paste the broMarquee component from this site into your Webflow project using Designer mode (see the guide). The component already includes all required attributes and structure — no manual configuration is needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to write JavaScript code to use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You only need to paste the script once. All behavior is controlled via HTML attributes, making it easy to use directly inside Webflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can users interact with the marquee (drag, swipe, scroll)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. broMarquee supports mouse drag, touch swipe, and trackpad or mouse wheel scrolling, with inertia for a natural feel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does broMarquee support autoplay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The marquee can autoplay smoothly, and users can override autoplay at any time by interacting with it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pause the marquee on hover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can configure broMarquee to pause on hover, keep moving, or remain interactive while hovered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does broMarquee work with Webflow CMS collections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. broMarquee works with CMS-driven lists as long as the items are rendered in the DOM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many marquees can I use on one page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use multiple marquees on the same page, either independently or synchronized."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is broMarquee performance-friendly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. broMarquee is lightweight and dependency-free. Best performance comes from optimized images and reasonable item counts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does broMarquee support accessibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use semantic HTML and meaningful alt text. Decorative logos can use empty alt attributes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which browsers are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "broMarquee supports modern browsers including Chrome, Safari, Firefox, Edge, and mobile browsers on iOS and Android."
+      }
+    }
+  ]
 }
 </script>
   <script src="https://cdn.prod.website-files.com/693013aef21b2c53ad08522e%2F6544eda5f000985a163a8687%2F6942db8b70b428467e6214be%2Ffinsweetcomponentsconfig-1.0.3.js" type="module" async="" siteid="693013aef21b2c53ad08522e" finsweet="components"></script>
@@ -380,7 +492,8 @@ input:focus-visible {
       </div>
       <div class="u-embed-css w-embed">
         <style>
-h1 strong { color: var(--swatch--brand-500); font-weight: 600; }
+h1 strong,
+h2 strong { color: var(--swatch--brand-500); font-weight: 600; }
 @media screen and (max-width: 767px) {
   .button_main_wrap .button_main_element {
     background: var(--swatch--dark-600);
@@ -514,7 +627,7 @@ html:has(.nav_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
 }
 </style>
       </div>
-      <a href="#main" class="nav_skip_wrap w-inline-block">
+      <a href="#" class="nav_skip_wrap w-inline-block">
         <div class="nav_skip_text u-text-style-small">Skip to main content</div>
       </a>
       <header class="nav_desktop_wrap">
@@ -541,6 +654,11 @@ html:has(.nav_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
                 <li class="nav_links_item">
                   <a href="#how-to-use" class="nav_links_link w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-inline-block">
                     <div class="nav_links_text w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">Get it now</div>
+                  </a>
+                </li>
+                <li class="nav_links_item">
+                  <a href="#faq" class="nav_links_link w-variant-23049969-09ac-2789-520b-3c6ae895bbc6 w-inline-block">
+                    <div class="nav_links_text w-variant-23049969-09ac-2789-520b-3c6ae895bbc6">FAQ</div>
                   </a>
                 </li>
                 <li class="nav_links_item">
@@ -579,6 +697,11 @@ html:has(.nav_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
                     <li class="nav_links_item">
                       <a href="#how-to-use" class="nav_links_link w-inline-block">
                         <div class="nav_links_text">Get it now</div>
+                      </a>
+                    </li>
+                    <li class="nav_links_item">
+                      <a href="#faq" class="nav_links_link w-inline-block">
+                        <div class="nav_links_text">FAQ</div>
                       </a>
                     </li>
                     <li class="nav_links_item">
@@ -625,7 +748,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
       </div>
     </div>
-    <main class="page_main">
+    <main id="main" class="page_main">
       <section id="hi" class="u-section">
         <div data-wf--spacer--variant="page-top" class="u-section-spacer w-variant-e359d2da-de19-6775-b122-3e06f925f39e u-ignore-trim"></div>
         <div class="u-container">
@@ -673,8 +796,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               <div class="playground_settings_group is-switch">
                 <div class="playground_settings_left"><span id="mask-label" class="playground_settings_label u-text-style-main">Mask (edge fade)</span>
-                  <p class="playground_settings_description u-text-style-small">Adds a soft fade on the edges 
-to improve readability.</p>
+                  <p class="playground_settings_description u-text-style-small">Adds a soft fade on the edges  to improve readability.</p>
                 </div>
                 <div class="playground_settings_right"><button role="switch" aria-checked="false" aria-labelledby="mask-label" class="switch_button"><span class="switch_thumb"></span></button></div>
               </div>
@@ -840,7 +962,7 @@ to improve readability.</p>
     }
   }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid1_poster.0000000.jpg" alt="">
                     </noscript>
-                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="f755d31e-b56d-abf4-18e5-810bb57d1d36-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="f755d31e-b56d-abf4-18e5-810bb57d1d36-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img width="Auto" height="Auto" alt="" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" loading="lazy" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="" class="play_button_icon"></span></button></div>
                   </div>
                 </figure>
               </div>
@@ -887,7 +1009,7 @@ to improve readability.</p>
     }
   }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid2_poster.0000000.jpg" alt="">
                     </noscript>
-                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="08f2c8a1-2b81-a474-ca45-ca8206de3be4-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="08f2c8a1-2b81-a474-ca45-ca8206de3be4-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="" class="play_button_icon"></span></button></div>
                   </div>
                 </figure>
               </div>
@@ -934,7 +1056,7 @@ to improve readability.</p>
     }
   }</style><img data-wf-bgvideo-fallback-img="true" src="videos/exmple-vid3_poster.0000000.jpg" alt="">
                     </noscript>
-                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="1e2a6473-d355-3a73-1e7c-41db1b3aeea6-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="Pause video" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="Play video" class="play_button_icon"></span></button></div>
+                    <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="1e2a6473-d355-3a73-1e7c-41db1b3aeea6-video" class="w-backgroundvideo-backgroundvideoplaypausebutton play_button_wrap w-background-video--control"><span class="play_button_play"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" alt="" class="play_button_icon"></span><span hidden="" class="play_button_pause"><img loading="lazy" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg" alt="" class="play_button_icon"></span></button></div>
                   </div>
                 </figure>
               </div>
@@ -1084,7 +1206,7 @@ document.querySelectorAll('.tabs_wrap').forEach(tabsWrap => {
           <div data-wf--content-wrapper--variant="left" class="u-display-contents">
             <div class="u-content-wrapper  ">
               <div data-number="22" data-wf--typography-heading--variant="h2" class="u-text w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext u-alignment-center u-text-wrap-default">
-                <h1>Getting started with bro<strong>Marquee</strong></h1>
+                <h2>Getting started with <strong>bro</strong><strong>Marquee</strong></h2>
               </div>
               <div data-number="44" data-wf--typography-paragraph--variant="text-large" class="u-text w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689 u-rich-text w-richtext u-alignment-center u-margin-bottom-7">
                 <p>Add a smooth, interactive marquee to your Webflow site in under 30 sec.</p>
@@ -1251,6 +1373,268 @@ document.querySelectorAll('.tabs_wrap').forEach(tabsWrap => {
           </div>
         </div>
       </section>
+      <section id="faq" class="u-section">
+        <div data-wf--spacer--variant="large" class="u-section-spacer w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3 u-ignore-trim"></div>
+        <div class="u-container-small">
+          <div data-wf--content-wrapper--variant="left" class="u-display-contents">
+            <div class="u-content-wrapper  ">
+              <div data-number="22" data-wf--typography-heading--variant="h2" class="u-text w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext u-alignment-center u-text-wrap-default">
+                <h1>FAQ<strong></strong></h1>
+              </div>
+            </div>
+          </div>
+          <div data-close-previous="true" data-close-on-second-click="true" data-open-on-hover="false" data-open-by-default="0" class="accordion_wrap" style="">
+            <div class="u-embed-css w-embed">
+              <style>
+.wf-design-mode .accordion_content_wrap {
+	display: block;
+}
+</style>
+            </div>
+            <div data-slot="" role="list" class="accordion_list">
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">What is broMarquee?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>broMarquee is a free, lightweight JavaScript library for building smooth, infinite logo marquees in Webflow — with real user control including drag, wheel, touch, and inertia.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Is broMarquee free to use?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. broMarquee is free and open-source under the MIT License. You can use it in both personal and commercial projects.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">How do I install broMarquee in Webflow?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Add the broMarquee script via CDN in the &lt;head&gt; of your page or project.</p>
+                        <p>Then copy and paste the broMarquee component from this site into your Webflow project using Designer mode (<a href="#how-to-use">see the guide</a>).</p>
+                        <p>The component already includes all required attributes and structure — no manual configuration is needed.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Do I need to write JavaScript code to use it?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>No. You only need to paste the script once. All behavior is controlled via HTML attributes, making it easy to use directly inside Webflow.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Can users interact with the marquee (drag, swipe, scroll)?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. broMarquee supports mouse drag, touch swipe, and trackpad or mouse wheel scrolling. Inertia is applied for a natural, physics-like feel.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Does broMarquee support autoplay?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. The marquee can autoplay smoothly, and users can override autoplay at any time by interacting with it.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Can I pause the marquee on hover?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. You can configure broMarquee to pause on hover, keep moving, or remain interactive while hovered — depending on your setup.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Does broMarquee work with Webflow CMS collections?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. broMarquee works with CMS-driven lists. As long as the items are rendered in the DOM, the marquee can run on them.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">How many marquees can I use on one page?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>You can use multiple marquees on the same page. Each marquee can run independently, or be configured to stay in sync if needed.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Is broMarquee performance-friendly?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. It’s designed to be lightweight and dependency-free. For best performance, use optimized images (SVG or WebP) and avoid excessive item counts.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Does broMarquee support accessibility?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>Yes. Use semantic HTML (lists for logos, links when clickable) and meaningful <code>alt</code> text. Decorative logos can use empty <code>alt</code> attributes.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-state="" role="listitem" class="accordion_item">
+                <div class="accordion_component">
+                  <h3 class="accordion_toggle_heading"><button aria-expanded="false" class="accordion_toggle_button"><span class="accordion_toggle_text u-text-style-h6">Which browsers are supported?</span><span class="accordion_toggle_icon"><svg data-wf--icon-arrow--direction="bottom" viewbox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" class="u-svg w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5">
+                          <path d="M17 2L50 34.9999L17 68" class="u-path is-arrow"></path>
+                        </svg></span></button></h3>
+                  <div class="accordion_content_wrap">
+                    <div class="accordion_content_padding">
+                      <div class="accordion_content_text u-rich-text w-richtext">
+                        <p>broMarquee supports all modern evergreen browsers, including Chrome, Safari, Firefox, Edge, and mobile browsers on iOS and Android.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-embed-js w-embed w-script">
+              <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".accordion_wrap").forEach((component, listIndex) => {
+    if (component.dataset.scriptInitialized) return;
+    component.dataset.scriptInitialized = "true";
+    const closePrevious = component.getAttribute("data-close-previous") !== "false";
+    const closeOnSecondClick = component.getAttribute("data-close-on-second-click") !== "false";
+    const openOnHover = component.getAttribute("data-open-on-hover") === "true";
+    const openByDefault = component.getAttribute("data-open-by-default") !== null && !isNaN(+component.getAttribute("data-open-by-default")) ? +component.getAttribute("data-open-by-default") : false;
+		const list = component.querySelector(".accordion_list");
+    let previousIndex = null,
+      closeFunctions = [];
+    function flattenDisplayContents(slot) {
+      if (!slot) return;
+      let child = slot.firstElementChild;
+      while (child && child.classList.contains("u-display-contents")) {
+        while (child.firstChild) {
+          slot.insertBefore(child.firstChild, child);
+        }
+        slot.removeChild(child);
+        child = slot.firstElementChild;
+      }
+    }
+		flattenDisplayContents(list);
+    function removeCMSList(slot) {
+      const dynList = Array.from(slot.children).find((child) => child.classList.contains("w-dyn-list"));
+      if (!dynList) return;
+      const nestedItems = dynList?.querySelector(".w-dyn-items")?.children;
+      if (!nestedItems) return;
+      const staticWrapper = [...slot.children];
+			[...nestedItems].forEach(el => { const c = [...el.children].find(c => !c.classList.contains('w-condition-invisible')); c && slot.appendChild(c); });
+      staticWrapper.forEach((el) => el.remove());
+    }
+    removeCMSList(list);
+    component.querySelectorAll(".accordion_component").forEach((card, cardIndex) => {
+      const button = card.querySelector(".accordion_toggle_button");
+      const content = card.querySelector(".accordion_content_wrap");
+      if (!button || !content) return console.warn("Missing elements:", card);
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("id", "accordion_button_" + listIndex + "_" + cardIndex);
+      content.setAttribute("id", "accordion_content_" + listIndex + "_" + cardIndex);
+      button.setAttribute("aria-controls", content.id);
+      content.setAttribute("aria-labelledby", button.id);
+      content.style.display = "none";
+      const refresh = () => {
+        tl.invalidate();
+        if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+      };
+      const tl = gsap.timeline({ paused: true, defaults: { duration: 0.3, ease: "power1.inOut" }, onComplete: refresh, onReverseComplete: refresh });
+      tl.set(content, { display: "block" });
+      tl.fromTo(content, { height: 0 }, { height: "auto" });
+      const closeAccordion = () => card.classList.contains("is-active") && (card.classList.remove("is-active"), tl.reverse(), button.setAttribute("aria-expanded", "false"));
+      closeFunctions[cardIndex] = closeAccordion;
+      const openAccordion = (instant = false) => {
+        if (closePrevious && previousIndex !== null && previousIndex !== cardIndex) closeFunctions[previousIndex]?.();
+        previousIndex = cardIndex;
+        button.setAttribute("aria-expanded", "true");
+        card.classList.add("is-active");
+        instant ? tl.progress(1) : tl.play();
+      };
+      if (openByDefault === cardIndex + 1) openAccordion(true);
+      button.addEventListener("click", () => (card.classList.contains("is-active") && closeOnSecondClick ? (closeAccordion(), (previousIndex = null)) : openAccordion()));
+      if (openOnHover) button.addEventListener("mouseenter", () => openAccordion());
+    });
+  });
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="contributing" class="u-section">
         <div data-wf--spacer--variant="large" class="u-section-spacer w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3 u-ignore-trim"></div>
         <div class="u-container">
@@ -1282,12 +1666,16 @@ document.querySelectorAll('.tabs_wrap').forEach(tabsWrap => {
                       <p class="list_static_text">(suggest improvements or new features)</p>
                     </li>
                     <li class="list_static_item">
-                      <h3 class="list_static_title u-text-style-h6">Report bugs</h3>
-                      <p class="list_static_text">(help identify issues and edge cases)</p>
+                      <div class="div-block">
+                        <h3 class="list_static_title u-text-style-h6">Report bugs</h3>
+                        <p class="list_static_text">(help identify issues and edge cases)</p>
+                      </div>
                     </li>
                     <li class="list_static_item">
-                      <h3 class="list_static_title u-text-style-h6">Show support</h3>
-                      <p class="list_static_text">(react to <a href="#" class="u-text-link">the announcement post on LinkedIn</a>)</p>
+                      <div class="div-block">
+                        <h3 class="list_static_title u-text-style-h6">Show support</h3>
+                        <p class="list_static_text">(react to <a href="#" class="u-text-link">the announcement post on LinkedIn</a>)</p>
+                      </div>
                     </li>
                   </ul>
                   <div data-number="40" data-wf--typography-heading--variant="h6" class="u-text w-variant-823daff2-fd84-8da0-4ed1-92a39b869ad0 w-richtext u-text-wrap-default">
@@ -1316,68 +1704,11 @@ document.querySelectorAll('.tabs_wrap').forEach(tabsWrap => {
       </div>
     </main>
   </div>
-  <div class="button-count w-embed w-script">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-(() => {
-  const SUPABASE_URL = "https://wbbfkbnckwddhyonzqiy.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_3rQ_wazzLJemodV96nl1BQ_i63C6Iv-";
-  const PAGE = location.pathname;
-  const VISITOR_KEY = "copy_visitor_id";
-  const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-  const getVisitorId = () => {
-    let id = localStorage.getItem(VISITOR_KEY);
-    if (!id) {
-      id = (crypto?.randomUUID ? crypto.randomUUID() : (Date.now() + "_" + Math.random().toString(16).slice(2)));
-      localStorage.setItem(VISITOR_KEY, id);
-    }
-    return id;
-  };
-  const clickedKey = (component_id) => `copied_${PAGE}__${component_id}`;
-  const hasClicked = (component_id) => localStorage.getItem(clickedKey(component_id)) === "1";
-  const markClicked = (component_id) => localStorage.setItem(clickedKey(component_id), "1");
-  const getCount = async (component_id) => {
-    const { count = 0, error } = await db
-      .from("copy_clicks")
-      .select("*", { count: "exact", head: true })
-      .eq("page", PAGE)
-      .eq("component_id", component_id);
-    if (error) console.error(error);
-    return count || 0;
-  };
-  const setCountInBtn = (btn, n) => {
-    const countEl = btn.querySelector("[data-copy-count]");
-    if (countEl) countEl.textContent = n;
-    else btn.dataset.copyCount = String(n);
-  };
-  const initButton = async (btn) => {
-    const component_id = btn.dataset.componentId || "default";
-    setCountInBtn(btn, await getCount(component_id));
-    btn.addEventListener("click", async () => {
-      if (hasClicked(component_id)) return;
-      btn.disabled = true;
-      const visitor_id = getVisitorId();
-      const { error } = await db.from("copy_clicks").insert({ page: PAGE, component_id, visitor_id });
-      btn.disabled = false;
-      if (error) {
-        console.error(error);
-        if (String(error.code) === "23505") {
-          markClicked(component_id);
-          setCountInBtn(btn, await getCount(component_id));
-        }
-        return;
-      }
-      markClicked(component_id);
-      setCountInBtn(btn, await getCount(component_id));
-    });
-  };
-  document.querySelectorAll('[data-copy-btn="1"]').forEach(initButton);
-})();
-</script>
-  </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=693013aef21b2c53ad08522e" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/bro-marquee.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js" type="text/javascript"></script>
   <script>function showToast(){const t=document.getElementById("copyToast");t.classList.add("is-show"),setTimeout(()=>t.classList.remove("is-show"),1500)}document.querySelectorAll(".steps_cta .button_main_wrap").forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=t.querySelector('[bro-button="text"]'),n=t.closest(".steps_embed_content"),c=n&&n.querySelector(".steps_embed_text");if(!c)return;const s=c.textContent.trim();o.textContent="Copying...",navigator.clipboard.writeText(s).then(()=>{showToast(),setTimeout(()=>{o.textContent="Copy Script"},1200)}).catch(t=>{console.error("Failed to copy:",t),o.textContent="Copy Script"})})});const copyButton=document.querySelector("[bro-button=copy-button]");copyButton&&copyButton.addEventListener("click",t=>{const e=copyButton.querySelector('[bro-button="text"]');e.textContent="Copying...";const o=t=>{t.preventDefault();const e=copyButton.querySelector('[bro-button="json"]').textContent;t.clipboardData.setData("application/json",e)};document.addEventListener("copy",o),document.execCommand("copy"),document.removeEventListener("copy",o),showToast(),setTimeout(()=>{e.textContent="Copy Component"},1e3)});</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>(()=>{const t=location.pathname,e="copy_visitor_id",o=supabase.createClient("https://wbbfkbnckwddhyonzqiy.supabase.co","sb_publishable_3rQ_wazzLJemodV96nl1BQ_i63C6Iv-"),a=e=>`copied_${t}__${e}`,c=t=>localStorage.setItem(a(t),"1"),r=async e=>{const{count:a=0,error:c}=await o.from("copy_clicks").select("*",{count:"exact",head:!0}).eq("page",t).eq("component_id",e);return c&&console.error(c),a||0},n=(t,e)=>{const o=t.querySelector("[data-copy-count]");o?o.textContent=e:t.dataset.copyCount=String(e)};document.querySelectorAll('[data-copy-btn="1"]').forEach((async i=>{const s=i.dataset.componentId||"default";n(i,await r(s)),i.addEventListener("click",(async()=>{if((t=>"1"===localStorage.getItem(a(t)))(s))return;i.disabled=!0;const l=(()=>{let t=localStorage.getItem(e);return t||(t=crypto?.randomUUID?crypto.randomUUID():Date.now()+"_"+Math.random().toString(16).slice(2),localStorage.setItem(e,t)),t})(),{error:d}=await o.from("copy_clicks").insert({page:t,component_id:s,visitor_id:l});if(i.disabled=!1,d)return console.error(d),void("23505"===String(d.code)&&(c(s),n(i,await r(s))));c(s),n(i,await r(s))}))}))})();</script>
 </body>
 </html>
