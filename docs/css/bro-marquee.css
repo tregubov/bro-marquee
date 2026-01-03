@@ -6156,27 +6156,28 @@ figure {
 }
 
 .play_button_wrap {
+  z-index: 5;
+  aspect-ratio: 1;
+  width: 3rem;
+  position: absolute;
   inset: 1rem auto auto 1rem;
 }
 
 .play_button_play {
   aspect-ratio: 1;
-  width: 44px;
-  height: 44px;
+  width: 100%;
   display: block;
   position: relative;
 }
 
 .play_button_pause {
-  width: 44px;
-  height: 44px;
+  aspect-ratio: 1;
+  width: 100%;
   position: relative;
 }
 
 .play_button_icon {
   aspect-ratio: 1;
-  position: absolute;
-  inset: 0%;
 }
 
 .compare_table_title {
@@ -6608,6 +6609,10 @@ figure {
     justify-content: space-between;
     align-items: stretch;
     padding: 1.5rem 1rem;
+  }
+
+  .play_button_wrap {
+    width: 2.5rem;
   }
 
   .compare_table_title {
