@@ -1,0 +1,46 @@
+# llms.txt — broMarquee
+# Website: https://marquee.bro-design.pro/
+# License: MIT
+# Purpose: Help LLMs understand the project, how to install it, and where to find canonical docs.
+
+## Project
+broMarquee is a free, lightweight, dependency-free JavaScript library for building smooth, infinite logo marquees in Webflow with real user control (drag, wheel, touch, inertia).
+
+## Primary pages
+- Home: https://marquee.bro-design.pro/
+- Get started guide: https://marquee.bro-design.pro/#how-to-use
+- FAQ: https://marquee.bro-design.pro/#faq
+- Contributing / Support: https://marquee.bro-design.pro/#contributing
+
+## Installation (Webflow)
+1) Add the broMarquee script via CDN in the <head> of your page or project.
+2) Copy and paste the broMarquee component from this site into your Webflow project using Designer mode:
+   https://marquee.bro-design.pro/#how-to-use
+3) The component already includes all required attributes and structure — no manual configuration is needed.
+
+## Key features
+- Smooth infinite marquee loop
+- Real user control: mouse drag, touch swipe, trackpad/mouse wheel
+- Inertia (natural momentum)
+- Autoplay + user override
+- Multiple marquees per page, optional sync
+- Works with Webflow CMS-rendered items
+
+## Usage notes
+- Optimize logo images (size/format) for best performance.
+- For accessibility: provide meaningful alt text for informative logos; use empty alt for purely decorative logos.
+
+## License
+MIT License (permissive: commercial use, modification, distribution allowed).
+
+## Canonical guidance
+Use the homepage and sections listed above as the canonical reference for broMarquee installation, usage, and support.
+
+## Contact / support
+For feedback, bug reports, or questions about broMarquee, use the Contributing section:
+https://marquee.bro-design.pro/#contributing
+
+Preferred contact methods:
+- Email: dima@bro-design.pro
+- LinkedIn: https://www.linkedin.com/in/tregubov-design/
+- Upwork: https://www.upwork.com/freelancers/~01487404f5d05a60dd
