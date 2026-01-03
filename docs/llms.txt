@@ -12,8 +12,8 @@ broMarquee is a free, lightweight, dependency-free JavaScript library for buildi
 - FAQ: https://marquee.bro-design.pro/#faq
 - Contributing / Support: https://marquee.bro-design.pro/#contributing
 
-## Installation (Webflow)
-1) Add the broMarquee script via CDN in the <head> of your page or project.
+## Installation (Webflow) 
+1) Add the broMarquee script via CDN in the HEAD of your page or project.
 2) Copy and paste the broMarquee component from this site into your Webflow project using Designer mode:
    https://marquee.bro-design.pro/#how-to-use
 3) The component already includes all required attributes and structure — no manual configuration is needed.
