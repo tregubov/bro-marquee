@@ -1,4 +1,4 @@
-# broMarquee — Interactive Logo Marquee for Webflow
+# broMarquee: Interactive Logo Marquee for Webflow
 A free, lightweight JavaScript library with no dependencies for building smooth, infinite logo marquees in Webflow — with drag, wheel, touch, inertia, and full user control.
 
 ![broMarquee](docs/images/og-image.jpg)
