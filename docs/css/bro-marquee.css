@@ -40,7 +40,7 @@
   --_text-style---line-height: var(--_typography---line-height--main);
   --_text-style---text-wrap: pretty;
   --_typography---line-height--h1: clamp(2.75 * 1rem, ((2.75 - ((4.2 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.2 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.2 * 1rem);
-  --_typography---line-height--h2: clamp(2.375 * 1rem, ((2.375 - ((3.25 - 2.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.25 - 2.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.25 * 1rem);
+  --_typography---line-height--h2: clamp(2.25 * 1rem, ((2.25 - ((3.25 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.25 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.25 * 1rem);
   --_typography---line-height--h3: clamp(2.25 * 1rem, ((2.25 - ((2.625 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.625 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.625 * 1rem);
   --_typography---font-size--h4: clamp(1.25 * 1rem, ((1.25 - ((1.75 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.75 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.75 * 1rem);
   --_typography---line-height--h5: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
@@ -5806,7 +5806,7 @@ figure {
 }
 
 .toggle_group.is-large {
-  padding: .25rem;
+  padding: .125rem;
 }
 
 .toggle_button {
@@ -5829,7 +5829,7 @@ figure {
 
 .toggle_button.is-large {
   font-size: var(--_typography---font-size--text-main);
-  padding: .625rem;
+  padding: .75rem;
 }
 
 .playground_settings_left {
@@ -5885,10 +5885,10 @@ figure {
 }
 
 .toggle_indicator.is-large {
-  width: calc(33.333% - .25rem);
-  height: calc(100% - .5rem);
-  top: .25rem;
-  left: .25rem;
+  width: calc(33.333% - 3px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
 }
 
 .playground_background {
@@ -6342,7 +6342,7 @@ figure {
   background-position: 0 1px;
   background-repeat: no-repeat;
   background-size: .875rem .875rem;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 .list_static_title {
@@ -6360,6 +6360,10 @@ figure {
   justify-content: flex-start;
   align-items: flex-start;
   display: inline;
+}
+
+.vimeo_embed {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -6517,6 +6521,10 @@ figure {
     padding-bottom: .75rem;
   }
 
+  .accordion_toggle_icon {
+    width: 1rem;
+  }
+
   .button_main_wrap.is-disable-mobile {
     pointer-events: none;
   }
@@ -6654,6 +6662,10 @@ figure {
     text-align: center;
     display: block;
   }
+
+  .list_static_item {
+    background-position: 0 1px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -6696,8 +6708,9 @@ figure {
   }
 
   .list_static_item {
+    background-position: 0 1px;
     background-size: .75rem .75rem;
-    padding-left: 1.25rem;
+    padding-left: 1rem;
   }
 }
 
